@@ -1,23 +1,57 @@
+
+/**
+ * Credentials for a given server
+ * @typedef {Object} ServerCredentials
+ * @property {string} Id
+ * @property {string} AccessToken
+ */
+
+/**
+ * Credentials
+ * @typedef {Object} Credentials
+ * @property {ServerCredentials[]} Servers
+ */
+
+/**
+ * Fetches the credentials inside of localstorage
+ * @returns {{token: string, userId: string}} Credential resource
+ */
+const getJellyfinCredentials = () => {
+  const jellyfinCreds = localStorage.getItem('jellyfin_credentials');
+
+  try {
+    /**
+     * @type {Credentials}
+     */
+    const serverCredentials = JSON.parse(jellyfinCreds);
+
+    const firstServer = serverCredentials.Servers[0];
+
+    if (!firstServer) {
+      console.error('Could not find credentials for the client');
+      return
+    }
+
+    return firstServer.AccessToken;
+  } catch (e) {
+    console.error('Could not parse jellyfin credentials', e);
+  }
+}
+
 const slidesInit = () => {
   const shuffleInterval = 8000;
   let isTransitioning = false;
   const listFileName = `${window.location.origin}/web/avatars/list.txt`;
-  const jsonCredentials = sessionStorage.getItem("json-credentials");
-  let userId = null;
-  let token = null;
-  const deviceId = localStorage.getItem("_deviceId2");
-  console.log(deviceId);
-  if (jsonCredentials) {
-    const credentials = JSON.parse(jsonCredentials);
-    userId = credentials.Servers[0].UserId;
-    token = credentials.Servers[0].AccessToken;
-  }
+
+  const { token, userId } = getJellyfinCredentials();
+
   const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
   const truncateText = (element, maxLength) => {
     let text = element.innerText;
     if (text.length > maxLength)
       element.innerText = text.substring(0, maxLength) + "...";
   };
+
   const createSlideElement = (item, title) => {
     const itemId = item.Id;
     const plot = item.Overview || "No overview available";
@@ -46,33 +80,43 @@ const slidesInit = () => {
     backdrop.className = "backdrop";
     backdrop.src = `${window.location.origin}/Items/${itemId}/Images/Backdrop/0`;
     backdrop.alt = "Backdrop";
+
     const backdropOverlay = document.createElement("div");
     backdropOverlay.className = "backdrop-overlay";
+
     const backdropContainer = document.createElement("div");
     backdropContainer.className = "backdrop-container";
     backdropContainer.appendChild(backdrop);
     backdropContainer.appendChild(backdropOverlay);
+
     const logo = document.createElement("img");
     logo.className = "logo";
     logo.src = `${window.location.origin}/Items/${itemId}/Images/Logo`;
     logo.alt = "Logo";
+
     const logoContainer = document.createElement("div");
     logoContainer.className = "logo-container";
     logoContainer.appendChild(logo);
+
     const featuredContent = document.createElement("div");
     featuredContent.className = "featured-content";
     featuredContent.textContent = title;
+
     const plotElement = document.createElement("div");
     plotElement.className = "plot";
     plotElement.textContent = plot;
     truncateText(plotElement, 360);
+
     const plotContainer = document.createElement("div");
     plotContainer.className = "plot-container";
     plotContainer.appendChild(plotElement);
+
     const gradientOverlay = document.createElement("div");
     gradientOverlay.className = "gradient-overlay";
+
     const runTimeElement = document.createElement("div");
     runTimeElement.className = "runTime";
+
     if (season === undefined) {
       const milliseconds = runtime / 10000;
       const currentTime = new Date();
@@ -83,8 +127,10 @@ const slidesInit = () => {
     } else {
       runTimeElement.textContent = `${season} Season${season > 1 ? "s" : ""}`;
     }
+
     const ratingTest = document.createElement("div");
     ratingTest.className = "rating-value";
+
     const imdbLogo = document.createElement("img");
     imdbLogo.className = "imdb-logo";
     imdbLogo.src =
@@ -93,6 +139,7 @@ const slidesInit = () => {
     imdbLogo.style.width = "30px";
     imdbLogo.style.height = "30px";
     ratingTest.appendChild(imdbLogo);
+
     if (typeof rating === "number") {
       const formattedRating = rating.toFixed(1);
       ratingTest.innerHTML += `${formattedRating} ⭐`;
@@ -101,21 +148,25 @@ const slidesInit = () => {
       ratingTest.innerHTML += `N/A ⭐`;
     }
     ratingTest.appendChild(createSeparator());
+
     const tomatoRatingDiv = document.createElement("div");
     tomatoRatingDiv.className = "tomato-rating";
-    const criticRating = item.CriticRating;
+
     const tomatoLogo = document.createElement("img");
     tomatoLogo.className = "tomato-logo";
+    tomatoLogo.src =
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Rotten_Tomatoes_positive_audience.svg/1920px-Rotten_Tomatoes_positive_audience.svg.png";
+
     const criticLogo = document.createElement("img");
     criticLogo.className = "critic-logo";
-    tomatoLogo.src =
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Rotten_Tomatoes_positive_audience.svg/1920px-Rotten_Tomatoes_positive_audience.svg.png";
+
     let valueElement;
     if (typeof criticRating === "number") {
       valueElement = document.createTextNode(`${criticRating}% `);
     } else {
       valueElement = document.createTextNode(`N/A `);
     }
+
     if (criticRating === undefined || criticRating <= 59) {
       criticLogo.src =
         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rotten_Tomatoes_rotten.svg/1024px-Rotten_Tomatoes_rotten.svg.png";
@@ -128,22 +179,28 @@ const slidesInit = () => {
     tomatoLogo.style.height = "17px";
     criticLogo.style.width = "15px";
     criticLogo.style.height = "15px";
+
     tomatoRatingDiv.appendChild(tomatoLogo);
     tomatoRatingDiv.appendChild(valueElement);
     tomatoRatingDiv.appendChild(criticLogo);
     tomatoRatingDiv.appendChild(createSeparator());
+
     const ageRatingDiv = document.createElement("div");
     ageRatingDiv.className = "age-rating";
+
     if (item.OfficialRating) {
       ageRatingDiv.innerHTML = `${item.OfficialRating}`;
     } else {
       ageRatingDiv.innerHTML = `N/A`;
     }
+
     const calender = "📅";
     const premiereDate = document.createElement("div");
     premiereDate.className = "date";
+
     const year = date ? new Date(date).getFullYear() : "N/A";
     premiereDate.textContent = isNaN(year) ? "N/A" : year;
+
     ratingTest.appendChild(tomatoRatingDiv);
     ratingTest.appendChild(document.createTextNode(calender));
     ratingTest.appendChild(premiereDate);
@@ -151,6 +208,7 @@ const slidesInit = () => {
     ratingTest.appendChild(ageRatingDiv);
     ratingTest.appendChild(createSeparator());
     ratingTest.appendChild(runTimeElement);
+
     const genresArray = item.Genres;
     function parseGenres(genresArray) {
       if (genresArray && genresArray.length > 0) {
@@ -159,29 +217,36 @@ const slidesInit = () => {
         return "No Genre Available";
       }
     }
+
     const genreElement = document.createElement("div");
     genreElement.className = "genre";
     genreElement.innerHTML = parseGenres(genresArray);
+
     const infoContainer = document.createElement("div");
     infoContainer.className = "info-container";
     infoContainer.appendChild(ratingTest);
+
     const playButton = document.createElement("button");
     playButton.className = "play-button";
     playButton.innerHTML = `
       <span class="play-icon"><i class="material-icons play_circle_outline"></i></span>
       <span class="play-text">Play Now</span>
     `;
+
     playButton.onclick = async () => {
       if (!window.ApiClient) {
         console.error("Jellyfin API client is not available.");
         return;
       }
+
       const apiClient = window.ApiClient;
       const userId = apiClient.getCurrentUserId();
+
       if (!userId) {
         console.error("User not found.");
         return;
       }
+
       try {
         const sessions = await apiClient.getJSON(
           apiClient.serverAddress() + "/Sessions"
@@ -209,15 +274,18 @@ const slidesInit = () => {
         console.error("Error fetching sessions:", error);
       }
     };
+
     const detailButton = document.createElement("button");
     detailButton.className = "detail-button";
     detailButton.innerHTML = `
       <span class="detail-icon"><i class="material-icons info_outline"></i></span>
       <span class="detail-text">More Details</span>
     `;
+
     detailButton.onclick = () => {
       window.top.location.href = `/#!/details?id=${itemId}`;
     };
+    
     slide.append(
       logoContainer,
       backdropContainer,

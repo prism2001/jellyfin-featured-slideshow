@@ -56,13 +56,14 @@ const slidesInit = () => {
     const itemId = item.Id;
     const plot = item.Overview || "No overview available";
     const rating = item.CommunityRating;
-    const tomato = item.CriticRating;
+    const criticRating = item.CriticRating;
     const runtime = item.RunTimeTicks;
-    const genre = item.Genres;
+    const genresArray = item.Genres;
     const youtube = item.RemoteTrailers;
     const age = item.OfficialRating;
     const date = item.PremiereDate;
     const season = item.ChildCount;
+
     function createSeparator() {
       const separatorHtml =
         '<i class="material-icons radio_button_off separator-icon"></i>';
@@ -209,7 +210,6 @@ const slidesInit = () => {
     ratingTest.appendChild(createSeparator());
     ratingTest.appendChild(runTimeElement);
 
-    const genresArray = item.Genres;
     function parseGenres(genresArray) {
       if (genresArray && genresArray.length > 0) {
         return genresArray.slice(0, 3).join(" 🔹 ");

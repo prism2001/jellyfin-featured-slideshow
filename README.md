@@ -121,8 +121,8 @@ Here I present my version of the same with some code improvements, loading optim
 <summary>main.jellyfin.bundle.js</summary>
 
 1. Similarly, search for `main.jellyfin.bundle.js` in the `jellyfin-web` directory. Open it with any code editor with administrator privileges.
-2. Search for `this.playbackManager = e;`
-3. Right after the `;`, paste the code block `window.PlaybackManager = this.playbackManager;console.log("PlaybackManager is now globally available:", window.PlaybackManager);`
+2. Search for `this.playbackManager = e,`
+3. Right after the `,`, paste the code block `window.PlaybackManager = this.playbackManager;console.log("PlaybackManager is now globally available:", window.PlaybackManager);`
 
 </details>
 

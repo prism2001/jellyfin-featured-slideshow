@@ -32,7 +32,7 @@ const getJellyfinCredentials = () => {
       return
     }
 
-    return { token: firstServer.AccessToken, userId: firstServer.AccessToken };
+    return { token: firstServer.AccessToken, userId: firstServer.UserId };
   } catch (e) {
     console.error('Could not parse jellyfin credentials', e);
   }

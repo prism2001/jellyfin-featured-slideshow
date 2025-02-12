@@ -1,4 +1,3 @@
-
 /**
  * Credentials for a given server
  * @typedef {Object} ServerCredentials
@@ -17,7 +16,7 @@
  * @returns {{token: string, userId: string}} Credential resource
  */
 const getJellyfinCredentials = () => {
-  const jellyfinCreds = localStorage.getItem('jellyfin_credentials');
+  const jellyfinCreds = localStorage.getItem("jellyfin_credentials");
 
   try {
     /**
@@ -28,17 +27,22 @@ const getJellyfinCredentials = () => {
     const firstServer = serverCredentials.Servers[0];
 
     if (!firstServer) {
-      console.error('Could not find credentials for the client');
-      return
+      console.error("Could not find credentials for the client");
+      return;
     }
 
     return { token: firstServer.AccessToken, userId: firstServer.UserId };
   } catch (e) {
-    console.error('Could not parse jellyfin credentials', e);
+    console.error("Could not parse jellyfin credentials", e);
   }
-}
+};
 
 const slidesInit = () => {
+  if (window.hasInitializedSlideshow) {
+    console.log("Slideshow already initialized. Skipping re-init.");
+    return;
+  }
+  window.hasInitializedSlideshow = true;
   const shuffleInterval = 8000;
   let isTransitioning = false;
   const listFileName = `${window.location.origin}/web/avatars/list.txt`;
@@ -156,7 +160,7 @@ const slidesInit = () => {
     const tomatoLogo = document.createElement("img");
     tomatoLogo.className = "tomato-logo";
     tomatoLogo.src =
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Rotten_Tomatoes_positive_audience.svg/1920px-Rotten_Tomatoes_positive_audience.svg.png";
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Rotten_Tomatoes_positive_audience.svg/1920px-Rotten_Tomatoes_positive_audience.svg.png";
 
     const criticLogo = document.createElement("img");
     criticLogo.className = "critic-logo";
@@ -331,14 +335,11 @@ const slidesInit = () => {
     }
   };
   const fetchItemDetails = async (itemId) => {
-    const response = await fetch(
-      `${window.location.origin}/Users/${userId}/Items/${itemId}`,
-      {
-        headers: {
-          Authorization: `MediaBrowser Client="Jellyfin Web", Device="YourDeviceName", DeviceId="YourDeviceId", Version="YourClientVersion", Token="${token}"`,
-        },
-      }
-    );
+    const response = await fetch(`${window.location.origin}/Items/${itemId}`, {
+      headers: {
+        Authorization: `MediaBrowser Client="Jellyfin Web", Device="YourDeviceName", DeviceId="YourDeviceId", Version="YourClientVersion", Token="${token}"`,
+      },
+    });
     const item = await response.json();
     console.log("Item Title:", item.Name);
     return item;
@@ -362,7 +363,7 @@ const slidesInit = () => {
   const fetchItemsFromServer = async () => {
     try {
       const response = await fetch(
-        `${window.location.origin}/Users/${userId}/Items?IncludeItemTypes=Movie,Series&Recursive=true&hasOverview=true&imageTypes=Logo,Backdrop&isPlayed=False&Limit=150`,
+        `${window.location.origin}/Items?IncludeItemTypes=Movie,Series&Recursive=true&hasOverview=true&imageTypes=Logo,Backdrop&SortBy=random&isPlayed=False&Limit=500`,
         {
           headers: {
             Authorization: `MediaBrowser Client="Jellyfin Web", Device="YourDeviceName", DeviceId="YourDeviceId", Version="YourClientVersion", Token="${token}"`,
@@ -412,6 +413,8 @@ const slidesInit = () => {
     const dots = document.querySelectorAll(".dot");
     slides.forEach((slide, i) => {
       if (i === index) {
+        console.log(`Showing slide ${index}`); // Debugging
+        slide.style.removeProperty("display");
         slide.style.display = "block";
         slide.offsetHeight;
         slide.style.opacity = "1";
@@ -423,6 +426,7 @@ const slidesInit = () => {
           slide.style.display = "none";
         }, 500);
       }
+      document.getElementById("slides-container").offsetHeight;
     });
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === index % 5);
@@ -531,15 +535,3 @@ const slidesInit = () => {
   };
   initializeSlides();
 };
-document.addEventListener("DOMContentLoaded", () => {
-  document.body.addEventListener("click", (event) => {
-    const homeButton = event.target.matches(
-      ".headerHomeButton, .css-17c09up, .mainDrawer-scrollContainer > a:nth-child(2)"
-    );
-    if (homeButton) {
-      event.preventDefault();
-      window.location.href = "/web/index.html#/home.html";
-      setTimeout(handleHomeNavigation, 300);
-    }
-  });
-});

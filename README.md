@@ -34,7 +34,7 @@ Here I present my version of the same with some code improvements, loading optim
 <details>
 <summary> Mobile Layout </summary>
   
-![Jellyfin Mobile Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Mobile.png)
+![Jellyfin Mobile Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Mobile.jpg)
 
 </details>
 

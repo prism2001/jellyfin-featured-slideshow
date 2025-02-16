@@ -5,6 +5,8 @@ Thanks to the Man, the Legend [BobHasNoSoul](https://github.com/BobHasNoSoul) fo
 
 Here I present my version of the same with some code improvements, loading optimizations, and Security Enhancements. Works best with the [Zombie theme](https://github.com/MakD/zombie-release) (_Shameless Plug_), but it fits with every other theme the creators have put their hard work in. You might've to edit the color accents in the CSS to match yours.
 
+> <ins>**Before Installing, please take a backup of your index.html, main.jellyfin.bundle.js and home-html.xxxxxx.chunk.js files**<ins>
+
 <details>
 <summary> Desktop Layout - Normal </summary>
   
@@ -36,7 +38,6 @@ Here I present my version of the same with some code improvements, loading optim
 
 </details>
 
-> <ins>**Before Installing, please take a backup of your index.html, main.jellyfin.bundle.js and home-html.xxxxxx.chunk.js files**<ins>
 
 # Prepping the Environment
 

@@ -1,15 +1,31 @@
 # Jellyfin-Media-Bar - Now with Play Now Function
 
-## TODO - Design changes upcoming next release
 
 Thanks to the Man, the Legend [BobHasNoSoul](https://github.com/BobHasNoSoul) for his work on the [jellyfinfeatured](https://github.com/BobHasNoSoul/jellyfin-featured) and [SethBacon](https://forum.jellyfin.org/u-sethbacon) and [TedHinklater](https://github.com/tedhinklater) for their take on the [Jellyfin-Featured-Content-Bar](https://github.com/tedhinklater/Jellyfin-Featured-Content-Bar). 
 
 Here I present my version of the same with some code improvements, loading optimizations, and Security Enhancements. Works best with the [Zombie theme](https://github.com/MakD/zombie-release) (_Shameless Plug_), but it fits with every other theme the creators have put their hard work in. You might've to edit the color accents in the CSS to match yours.
 
 <details>
-<summary> Desktop Layout </summary>
+<summary> Desktop Layout - Normal </summary>
   
 ![Jellyfin Desktop Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Web.png)
+  
+</details>
+
+<details>
+<summary> Desktop Layout - Fullscreen </summary>
+  
+![Jellyfin Desktop Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Web%20-%20Fullscreen%20Mode.png)
+
+- Download the slideshowpure-fullsreen.css, rename it to `slideshowpure,css`, and replace the default CSS with the full-screen one.
+- Add the following code in your custom CSS
+```
+@media only screen and (min-width: 767px) {
+.emby-scroller-container {
+    z-index: 8;
+}
+}
+```
   
 </details>
 
@@ -20,7 +36,7 @@ Here I present my version of the same with some code improvements, loading optim
 
 </details>
 
-> <ins>**Before Installing, please take a backup of your index.html and home-html.xxxxxx.chunk.js files**<ins>
+> <ins>**Before Installing, please take a backup of your index.html, main.jellyfin.bundle.js and home-html.xxxxxx.chunk.js files**<ins>
 
 # Prepping the Environment
 

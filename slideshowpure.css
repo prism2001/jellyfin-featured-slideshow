@@ -65,7 +65,7 @@
 
   .dots-container {
     position: absolute;
-    bottom: -3%;
+    bottom: 3%;
     left: 0;
     right: 0;
     z-index: 2;

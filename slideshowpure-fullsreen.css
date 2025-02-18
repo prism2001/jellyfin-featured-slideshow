@@ -11,6 +11,10 @@
     display: none;
   }
 
+  .emby-scroller-container {
+    z-index: 8;
+}
+
   .backdrop,
   .slide {
     position: absolute;

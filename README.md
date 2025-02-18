@@ -20,14 +20,6 @@ Here I present my version of the same with some code improvements, loading optim
 ![Jellyfin Desktop Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Web%20-%20Fullscreen%20Mode.png)
 
 - Download the slideshowpure-fullsreen.css, rename it to `slideshowpure,css`, and replace the default CSS with the full-screen one.
-- Add the following code in your custom CSS
-```
-@media only screen and (min-width: 767px) {
-.emby-scroller-container {
-    z-index: 8;
-}
-}
-```
   
 </details>
 
@@ -118,7 +110,7 @@ Here I present my version of the same with some code improvements, loading optim
 <summary>main.jellyfin.bundle.js</summary>
 
 1. Similarly, search for `main.jellyfin.bundle.js` in the `jellyfin-web` directory. Open it with any code editor with administrator privileges.
-2. Search for `this.playbackManager = e,`
+2. Search for `this.playbackManager=e,`
 3. Right after the `,`, paste the code block `window.PlaybackManager = this.playbackManager;console.log("PlaybackManager is now globally available:", window.PlaybackManager);`
 
 </details>

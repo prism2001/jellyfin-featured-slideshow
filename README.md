@@ -24,7 +24,16 @@ Here I present my version of the same with some code improvements, loading optim
 </details>
 
 <details>
-<summary> Mobile Layout </summary>
+
+<summary> Mobile Layout - Fullscreen </summary>
+  
+![Jellyfin Mobile Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Mobile-Fullscreen.png)
+
+</details>
+
+<details>
+  
+<summary> Mobile Layout - Normal </summary>
   
 ![Jellyfin Mobile Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Mobile.png)
 

@@ -705,3 +705,88 @@
     align-items: center;
   }
 }
+@media only screen and (min-width: 767px) and (orientation: landscape) {
+  .logo {
+    position: relative;
+    max-height: 50%;
+    max-width: 75%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    z-index: 4;
+    top: 7em;
+    left: 5em;
+    filter: brightness(1.5);
+  }
+  #slides-container {
+    position: relative;
+    width: 100vw;
+    height: 40em;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 15px;
+    top: -6em;
+  }
+  .overflowBackdropCard {
+    width: 25vw !important;
+  }
+  .sections.homeSectionsContainer {
+    position: relative;
+    z-index: 8;
+    top: -13em;
+  }
+  .info-container {
+    position: absolute;
+    top: calc(50% + -40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -1em !important;
+    color: #fff;
+    z-index: 4;
+  }
+  .genre {
+    position: absolute;
+    top: calc(50% + -5px);
+    left: 5em;
+    text-align: center;
+    color: #fff;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 14px;
+    z-index: 4;
+  }
+  .plot {
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    left: 4.7em;
+    position: absolute;
+    top: 85px;
+  }
+  .button-container {
+    position: absolute;
+    top: calc(50% + 125px);
+    left: 4.5em;
+    display: flex;
+    z-index: 5;
+    justify-content: space-between;
+    width: 14em;
+  }
+  .dots-container {
+    position: absolute;
+    top: calc(50% + 140px);
+    right: 3%;
+    z-index: 2;
+    display: flex;
+    gap: 5px;
+    background-color: #ffffff3d;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 22px;
+    transition: opacity 0.5 ease-in-out;
+    scale: 0.8;
+  }
+}

@@ -12,16 +12,19 @@ const getJellyfinCredentials = () => {
     console.error("Could not parse jellyfin credentials", e);
   }
 };
+
 const initLoadingScreen = () => {
-  const currentPath = window.location.href;
+  const currentPath = window.location.href.toLowerCase();
+
   if (
-    currentPath.includes("/web/#/home.html") ||
-    currentPath.includes("/web/index.html#/home.html")
+      currentPath.includes("/web/#/home.html") || 
+      currentPath.includes("/web/index.html#/home.html") || 
+      currentPath.endsWith("/web/")
   ) {
-    const loadingHTML = `
+      const loadingHTML = `
       <div class="bar-loading">
           <h1>
-              <img src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/refs/heads/master/branding/android/logo_clean.svg" 
+              <img src="https://i.imgur.com/DAYQRfa.png" 
                   alt="Server Logo" 
                   style="width: 250px; height: auto;">
           </h1>
@@ -30,7 +33,7 @@ const initLoadingScreen = () => {
           </div>
       </div>
       `;
-    document.body.insertAdjacentHTML("beforeend", loadingHTML);
+      document.body.insertAdjacentHTML("beforeend", loadingHTML);
   }
 };
 initLoadingScreen();

@@ -13,19 +13,25 @@ const getJellyfinCredentials = () => {
   }
 };
 const initLoadingScreen = () => {
-  const loadingHTML = `
-  <div class="bar-loading">
-      <h1>
-          <img src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/refs/heads/master/branding/android/logo_clean.svg" 
-               alt="Server Logo" 
-               style="width: 250px; height: auto;">
-      </h1>
-      <div class="docspinner">
-          <div class="spinner-layer"></div>
+  const currentPath = window.location.href;
+  if (
+    currentPath.includes("/web/#/home.html") ||
+    currentPath.includes("/web/index.html#/home.html")
+  ) {
+    const loadingHTML = `
+      <div class="bar-loading">
+          <h1>
+              <img src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/refs/heads/master/branding/android/logo_clean.svg" 
+                  alt="Server Logo" 
+                  style="width: 250px; height: auto;">
+          </h1>
+          <div class="docspinner">
+              <div class="spinner-layer"></div>
+          </div>
       </div>
-  </div>
-  `;
-  document.body.insertAdjacentHTML("beforeend", loadingHTML);
+      `;
+    document.body.insertAdjacentHTML("beforeend", loadingHTML);
+  }
 };
 initLoadingScreen();
 const slidesInit = async () => {
@@ -71,24 +77,27 @@ const slidesInit = async () => {
     backdrop.className = "backdrop";
     backdrop.src = `${window.location.origin}/Items/${itemId}/Images/Backdrop/0`;
     backdrop.alt = "Backdrop";
+    backdrop.loading = "eager";
     const backdropOverlay = document.createElement("div");
     backdropOverlay.className = "backdrop-overlay";
     const backdropContainer = document.createElement("div");
     backdropContainer.className = "backdrop-container";
-    backdropContainer.Child(backdrop);
-    backdropContainer.Child(backdropOverlay);
+    backdropContainer.appendChild(backdrop);
+    backdropContainer.appendChild(backdropOverlay);
     const logo = document.createElement("img");
     logo.className = "logo";
     logo.src = `${window.location.origin}/Items/${itemId}/Images/Logo`;
     logo.alt = "Logo";
+    logo.loading = "eager";
     const logoImgBlur = document.createElement("img");
     logoImgBlur.src = `${window.location.origin}/Items/${itemId}/Images/Logo`;
     logoImgBlur.alt = item.Name || "Title";
+    logoImgBlur.loading = "eager";
     logoImgBlur.className = "featured-logo-blur";
     const logoContainer = document.createElement("div");
     logoContainer.className = "logo-container";
-    logoContainer.Child(logo);
-    logoContainer.Child(logoImgBlur);
+    logoContainer.appendChild(logo);
+    logoContainer.appendChild(logoImgBlur);
     const featuredContent = document.createElement("div");
     featuredContent.className = "featured-content";
     featuredContent.textContent = title;
@@ -98,7 +107,7 @@ const slidesInit = async () => {
     truncateText(plotElement, 360);
     const plotContainer = document.createElement("div");
     plotContainer.className = "plot-container";
-    plotContainer.Child(plotElement);
+    plotContainer.appendChild(plotElement);
     const gradientOverlay = document.createElement("div");
     gradientOverlay.className = "gradient-overlay";
     const runTimeElement = document.createElement("div");
@@ -122,14 +131,14 @@ const slidesInit = async () => {
     imdbLogo.alt = "IMDb Logo";
     imdbLogo.style.width = "30px";
     imdbLogo.style.height = "30px";
-    ratingTest.Child(imdbLogo);
+    ratingTest.appendChild(imdbLogo);
     if (typeof rating === "number") {
       const formattedRating = rating.toFixed(1);
       ratingTest.innerHTML += `${formattedRating} ⭐`;
     } else {
       ratingTest.innerHTML += `N/A ⭐`;
     }
-    ratingTest.Child(createSeparator());
+    ratingTest.appendChild(createSeparator());
     const tomatoRatingDiv = document.createElement("div");
     tomatoRatingDiv.className = "tomato-rating";
     const tomatoLogo = document.createElement("img");
@@ -156,10 +165,10 @@ const slidesInit = async () => {
     tomatoLogo.style.height = "17px";
     criticLogo.style.width = "15px";
     criticLogo.style.height = "15px";
-    tomatoRatingDiv.Child(tomatoLogo);
-    tomatoRatingDiv.Child(valueElement);
-    tomatoRatingDiv.Child(criticLogo);
-    tomatoRatingDiv.Child(createSeparator());
+    tomatoRatingDiv.appendChild(tomatoLogo);
+    tomatoRatingDiv.appendChild(valueElement);
+    tomatoRatingDiv.appendChild(criticLogo);
+    tomatoRatingDiv.appendChild(createSeparator());
     const ageRatingDiv = document.createElement("div");
     ageRatingDiv.className = "age-rating";
     if (item.OfficialRating) {
@@ -172,13 +181,13 @@ const slidesInit = async () => {
     premiereDate.className = "date";
     const year = date ? new Date(date).getFullYear() : "N/A";
     premiereDate.textContent = isNaN(year) ? "N/A" : year;
-    ratingTest.Child(tomatoRatingDiv);
-    ratingTest.Child(document.createTextNode(calender));
-    ratingTest.Child(premiereDate);
-    ratingTest.Child(createSeparator());
-    ratingTest.Child(ageRatingDiv);
-    ratingTest.Child(createSeparator());
-    ratingTest.Child(runTimeElement);
+    ratingTest.appendChild(tomatoRatingDiv);
+    ratingTest.appendChild(document.createTextNode(calender));
+    ratingTest.appendChild(premiereDate);
+    ratingTest.appendChild(createSeparator());
+    ratingTest.appendChild(ageRatingDiv);
+    ratingTest.appendChild(createSeparator());
+    ratingTest.appendChild(runTimeElement);
     function parseGenres(genresArray) {
       if (genresArray && genresArray.length > 0) {
         return genresArray.slice(0, 3).join(" 🔹 ");
@@ -191,7 +200,7 @@ const slidesInit = async () => {
     genreElement.innerHTML = parseGenres(genresArray);
     const infoContainer = document.createElement("div");
     infoContainer.className = "info-container";
-    infoContainer.Child(ratingTest);
+    infoContainer.appendChild(ratingTest);
     const buttonContainer = document.createElement("div");
     buttonContainer.className = "button-container";
     const playButton = document.createElement("button");
@@ -246,9 +255,9 @@ const slidesInit = async () => {
     detailButton.onclick = () => {
       window.top.location.href = `/#!/details?id=${itemId}`;
     };
-    buttonContainer.Child(detailButton);
-    buttonContainer.Child(playButton);
-    slide.(
+    buttonContainer.appendChild(detailButton);
+    buttonContainer.appendChild(playButton);
+    slide.append(
       logoContainer,
       backdropContainer,
       gradientOverlay,
@@ -271,7 +280,7 @@ const slidesInit = async () => {
     ]);
     if (backdropExists && logoExists) {
       const slideElement = createSlideElement(item, title);
-      container.Child(slideElement);
+      container.appendChild(slideElement);
       if (container.children.length === 1) {
         showSlide(0);
       }
@@ -449,14 +458,17 @@ const slidesInit = async () => {
     rightArrow.innerHTML = '<i class="material-icons arrow_forward_ios"></i>';
     container.appendChild(leftArrow);
     container.appendChild(rightArrow);
-    
     let touchStartX = 0;
     let touchEndX = 0;
     const minSwipeDistance = 50;
+    let isTouchOnButton = false;
+
     container.addEventListener(
       "touchstart",
       (event) => {
         touchStartX = event.touches[0].clientX;
+        isTouchOnButton =
+          event.target.closest(".play-button, .detail-button") !== null;
       },
       { passive: false }
     );
@@ -467,9 +479,12 @@ const slidesInit = async () => {
       },
       { passive: false }
     );
+
     container.addEventListener(
       "touchend",
       (event) => {
+        if (isTouchOnButton) return;
+
         const swipeDistance = touchEndX - touchStartX;
         if (Math.abs(swipeDistance) > minSwipeDistance) {
           event.preventDefault();
@@ -510,7 +525,7 @@ const slidesInit = async () => {
     items = shuffleArray(items);
     await createSlidesForItems(items);
     initializeSlideshow();
-    $(".bar-loading").fadeOut(200, () => $(".bar-loading").remove());
+    $(".bar-loading").fadeOut(700, () => $(".bar-loading").remove());
   };
   initializeSlides();
 };

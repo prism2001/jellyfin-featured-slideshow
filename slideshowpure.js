@@ -75,8 +75,8 @@ const slidesInit = async () => {
     backdropOverlay.className = "backdrop-overlay";
     const backdropContainer = document.createElement("div");
     backdropContainer.className = "backdrop-container";
-    backdropContainer.appendChild(backdrop);
-    backdropContainer.appendChild(backdropOverlay);
+    backdropContainer.Child(backdrop);
+    backdropContainer.Child(backdropOverlay);
     const logo = document.createElement("img");
     logo.className = "logo";
     logo.src = `${window.location.origin}/Items/${itemId}/Images/Logo`;
@@ -87,8 +87,8 @@ const slidesInit = async () => {
     logoImgBlur.className = "featured-logo-blur";
     const logoContainer = document.createElement("div");
     logoContainer.className = "logo-container";
-    logoContainer.appendChild(logo);
-    logoContainer.appendChild(logoImgBlur);
+    logoContainer.Child(logo);
+    logoContainer.Child(logoImgBlur);
     const featuredContent = document.createElement("div");
     featuredContent.className = "featured-content";
     featuredContent.textContent = title;
@@ -98,7 +98,7 @@ const slidesInit = async () => {
     truncateText(plotElement, 360);
     const plotContainer = document.createElement("div");
     plotContainer.className = "plot-container";
-    plotContainer.appendChild(plotElement);
+    plotContainer.Child(plotElement);
     const gradientOverlay = document.createElement("div");
     gradientOverlay.className = "gradient-overlay";
     const runTimeElement = document.createElement("div");
@@ -122,14 +122,14 @@ const slidesInit = async () => {
     imdbLogo.alt = "IMDb Logo";
     imdbLogo.style.width = "30px";
     imdbLogo.style.height = "30px";
-    ratingTest.appendChild(imdbLogo);
+    ratingTest.Child(imdbLogo);
     if (typeof rating === "number") {
       const formattedRating = rating.toFixed(1);
       ratingTest.innerHTML += `${formattedRating} ⭐`;
     } else {
       ratingTest.innerHTML += `N/A ⭐`;
     }
-    ratingTest.appendChild(createSeparator());
+    ratingTest.Child(createSeparator());
     const tomatoRatingDiv = document.createElement("div");
     tomatoRatingDiv.className = "tomato-rating";
     const tomatoLogo = document.createElement("img");
@@ -156,10 +156,10 @@ const slidesInit = async () => {
     tomatoLogo.style.height = "17px";
     criticLogo.style.width = "15px";
     criticLogo.style.height = "15px";
-    tomatoRatingDiv.appendChild(tomatoLogo);
-    tomatoRatingDiv.appendChild(valueElement);
-    tomatoRatingDiv.appendChild(criticLogo);
-    tomatoRatingDiv.appendChild(createSeparator());
+    tomatoRatingDiv.Child(tomatoLogo);
+    tomatoRatingDiv.Child(valueElement);
+    tomatoRatingDiv.Child(criticLogo);
+    tomatoRatingDiv.Child(createSeparator());
     const ageRatingDiv = document.createElement("div");
     ageRatingDiv.className = "age-rating";
     if (item.OfficialRating) {
@@ -172,13 +172,13 @@ const slidesInit = async () => {
     premiereDate.className = "date";
     const year = date ? new Date(date).getFullYear() : "N/A";
     premiereDate.textContent = isNaN(year) ? "N/A" : year;
-    ratingTest.appendChild(tomatoRatingDiv);
-    ratingTest.appendChild(document.createTextNode(calender));
-    ratingTest.appendChild(premiereDate);
-    ratingTest.appendChild(createSeparator());
-    ratingTest.appendChild(ageRatingDiv);
-    ratingTest.appendChild(createSeparator());
-    ratingTest.appendChild(runTimeElement);
+    ratingTest.Child(tomatoRatingDiv);
+    ratingTest.Child(document.createTextNode(calender));
+    ratingTest.Child(premiereDate);
+    ratingTest.Child(createSeparator());
+    ratingTest.Child(ageRatingDiv);
+    ratingTest.Child(createSeparator());
+    ratingTest.Child(runTimeElement);
     function parseGenres(genresArray) {
       if (genresArray && genresArray.length > 0) {
         return genresArray.slice(0, 3).join(" 🔹 ");
@@ -191,7 +191,7 @@ const slidesInit = async () => {
     genreElement.innerHTML = parseGenres(genresArray);
     const infoContainer = document.createElement("div");
     infoContainer.className = "info-container";
-    infoContainer.appendChild(ratingTest);
+    infoContainer.Child(ratingTest);
     const buttonContainer = document.createElement("div");
     buttonContainer.className = "button-container";
     const playButton = document.createElement("button");
@@ -246,9 +246,9 @@ const slidesInit = async () => {
     detailButton.onclick = () => {
       window.top.location.href = `/#!/details?id=${itemId}`;
     };
-    buttonContainer.appendChild(detailButton);
-    buttonContainer.appendChild(playButton);
-    slide.append(
+    buttonContainer.Child(detailButton);
+    buttonContainer.Child(playButton);
+    slide.(
       logoContainer,
       backdropContainer,
       gradientOverlay,
@@ -271,7 +271,7 @@ const slidesInit = async () => {
     ]);
     if (backdropExists && logoExists) {
       const slideElement = createSlideElement(item, title);
-      container.appendChild(slideElement);
+      container.Child(slideElement);
       if (container.children.length === 1) {
         showSlide(0);
       }
@@ -449,6 +449,40 @@ const slidesInit = async () => {
     rightArrow.innerHTML = '<i class="material-icons arrow_forward_ios"></i>';
     container.appendChild(leftArrow);
     container.appendChild(rightArrow);
+    
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50;
+    container.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.touches[0].clientX;
+      },
+      { passive: false }
+    );
+    container.addEventListener(
+      "touchmove",
+      (event) => {
+        touchEndX = event.touches[0].clientX;
+      },
+      { passive: false }
+    );
+    container.addEventListener(
+      "touchend",
+      (event) => {
+        const swipeDistance = touchEndX - touchStartX;
+        if (Math.abs(swipeDistance) > minSwipeDistance) {
+          event.preventDefault();
+          event.stopPropagation();
+          if (swipeDistance < 0) {
+            updateCurrentSlide(currentSlideIndex + 1);
+          } else {
+            updateCurrentSlide(currentSlideIndex - 1);
+          }
+        }
+      },
+      { passive: false }
+    );
     leftArrow.addEventListener("click", () =>
       updateCurrentSlide(currentSlideIndex - 1)
     );

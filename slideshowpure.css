@@ -456,6 +456,7 @@
     color: rgba(255, 255, 255, 0.6);
     z-index: 4;
     -webkit-tap-highlight-color: transparent;
+    display: none;
   }
 
   .left-arrow {

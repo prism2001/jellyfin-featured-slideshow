@@ -26,10 +26,6 @@
   border-radius: 50%;
   border: 4px solid #fff0;
   border-top-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   animation: spin 1s linear infinite;
 }
 @keyframes spin {

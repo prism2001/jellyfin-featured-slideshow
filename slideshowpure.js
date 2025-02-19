@@ -15,25 +15,29 @@ const getJellyfinCredentials = () => {
 
 const initLoadingScreen = () => {
   const currentPath = window.location.href.toLowerCase();
-
   if (
-      currentPath.includes("/web/#/home.html") || 
-      currentPath.includes("/web/index.html#/home.html") || 
-      currentPath.endsWith("/web/")
+    currentPath.includes("/web/#/home.html") ||
+    currentPath.includes("/web/index.html#/home.html") ||
+    currentPath.endsWith("/web/")
   ) {
-      const loadingHTML = `
-      <div class="bar-loading">
+    const loadingHTML = `
+      <div class="bar-loading" id="page-loader">
           <h1>
-              <img src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/refs/heads/master/branding/android/logo_clean.svg" 
+              <img src="https://i.imgur.com/DAYQRfa.png" 
                   alt="Server Logo" 
                   style="width: 250px; height: auto;">
           </h1>
           <div class="docspinner">
               <div class="spinner-layer"></div>
           </div>
-      </div>
-      `;
-      document.body.insertAdjacentHTML("beforeend", loadingHTML);
+      </div>`;
+    document.body.insertAdjacentHTML("beforeend", loadingHTML);
+    const interval = setInterval(() => {
+      if (document.querySelector(".manualLoginForm")) {
+        $(".bar-loading").fadeOut(700, () => $(".bar-loading").remove());
+        clearInterval(interval);
+      }
+    }, 100);
   }
 };
 initLoadingScreen();
@@ -42,6 +46,7 @@ const slidesInit = async () => {
     console.log("Slideshow already initialized. Skipping re-init.");
     return;
   }
+
   window.hasInitializedSlideshow = !0;
   const shuffleInterval = 8000;
   let isTransitioning = !1;

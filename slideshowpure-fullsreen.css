@@ -422,6 +422,7 @@
     color: rgb(255 255 255 / 0.6);
     z-index: 4;
     -webkit-tap-highlight-color: #fff0;
+    display: none;
   }
   .left-arrow {
     left: 10px;

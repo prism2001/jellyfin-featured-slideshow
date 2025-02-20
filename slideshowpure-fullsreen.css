@@ -139,12 +139,12 @@
     overflow: hidden;
     margin: 0 auto;
     border-radius: 15px;
-    top: -6em;
+    top: -6.8em;
   }
   .sections.homeSectionsContainer {
     position: relative;
     z-index: 8;
-    top: -17em;
+    top: -20em;
   }
   .slide {
     transition: opacity 0.5s ease-in-out;

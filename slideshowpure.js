@@ -27,8 +27,8 @@ const initLoadingScreen = () => {
                   alt="Server Logo" 
                   style="width: 250px; height: auto;">
           </h1>
-          <div class="docspinner">
-              <div class="spinner-layer"></div>
+          <div class="docspinner-loader">
+              <div class="loader-spinner-layer"></div>
           </div>
       </div>`;
     document.body.insertAdjacentHTML("beforeend", loadingHTML);

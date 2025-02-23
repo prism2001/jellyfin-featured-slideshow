@@ -214,7 +214,7 @@ const slidesInit = async () => {
     const playButton = document.createElement("button");
     playButton.className = "play-button";
     playButton.innerHTML = `
-  <span class="play-icon"><i class="material-icons">play_circle_fill</i></span>
+  <span class="play-icon"><i class="material-icons">play_circle</i></span>
   <span class="play-text">Play</span>
 `;
     playButton.onclick = async () => {

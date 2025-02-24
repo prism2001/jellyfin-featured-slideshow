@@ -1,9 +1,15 @@
 # Jellyfin-Media-Bar - Now with Play Now Function
 
+**IMP UPDATE—We have dropped support for the normal CSS version. _(It still works, but there are no further updates.)_** 
+
+The fullscreen version has a new look (in beta), and support for different screen sizes has been added. For any visual goof-ups, please open a bug report, including the device being used and whether it is encountered in portrait or landscape mode.
+
 
 Thanks to the Man, the Legend [BobHasNoSoul](https://github.com/BobHasNoSoul) for his work on the [jellyfinfeatured](https://github.com/BobHasNoSoul/jellyfin-featured) and [SethBacon](https://forum.jellyfin.org/u-sethbacon) and [TedHinklater](https://github.com/tedhinklater) for their take on the [Jellyfin-Featured-Content-Bar](https://github.com/tedhinklater/Jellyfin-Featured-Content-Bar). 
 
 Here I present my version of the same with some code improvements, loading optimizations, and Security Enhancements. Works best with the [Zombie theme](https://github.com/MakD/zombie-release) (_Shameless Plug_ `@import url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@latest/zombie_revived.css);`, visit the repo for more color schemes), but it fits with every other theme the creators have put their hard work in. You should edit the color accents in the CSS to match yours.
+
+
 
 > <ins>**Before Installing, please take a backup of your index.html, main.jellyfin.bundle.js and home-html.xxxxxx.chunk.js files**<ins>
 
@@ -145,3 +151,13 @@ ItemID4
 ItemID5
 ```
 The next time it loads, it will display these items.
+
+# Uninstall the Bar
+
+<details>
+  
+<summary> Roll Back </summary>
+
+Restore the `index.html`, `home-html.xxxxxx.chunk.js`, and `main.jellyfin.bundle.js` and you are good to go!!!
+
+</details>

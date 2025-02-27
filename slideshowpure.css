@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap);
 .bar-loading {
   z-index: 99999999;
   position: fixed;
@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0 0 0);
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +37,6 @@
     transform: rotate(360deg);
   }
 }
-/* Mobile (Portrait) */
 @media only screen and (max-width: 480px) and (orientation: portrait) {
   .backdrop,
   .slide {
@@ -62,7 +61,7 @@
   }
   .featured-content,
   .plot-container {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     left: 0;
   }
   .plot,
@@ -182,13 +181,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .gradient-overlay {
@@ -204,13 +203,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .genre {
@@ -225,7 +224,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-size: 1.1em;
     font-weight: 500;
     z-index: 4;
@@ -245,13 +244,13 @@
     width: 100%;
   }
   .rating-value {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
   }
   .date {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -336,8 +335,6 @@
     align-items: center;
   }
 }
-
-/* Mobile (Landscape) */
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   .backdrop,
   .slide {
@@ -345,7 +342,7 @@
   }
   .featured-content,
   .plot-container {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     left: 0;
   }
   .plot,
@@ -431,13 +428,12 @@
     height: 170vh;
     overflow: hidden;
     margin: 0 auto;
-    /*border-radius: 15px;*/
     top: -7.5em;
   }
   .sections.homeSectionsContainer {
     position: relative;
     z-index: 8;
-    top: -14em;
+    top: -60vh;
   }
   .slide {
     transition: opacity 0.5s ease-in-out;
@@ -474,13 +470,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .backdrop-overlay {
@@ -496,13 +492,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .logo-container {
@@ -575,13 +571,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .genre {
@@ -590,7 +586,7 @@
     left: 4.8em;
     text-align: center;
     color: #fff;
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-size: 14px;
     z-index: 4;
   }
@@ -605,7 +601,7 @@
     z-index: 4;
   }
   .rating-value {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     display: flex;
     align-items: center;
     margin: 0 6em;
@@ -613,7 +609,7 @@
     position: relative;
   }
   .runTime {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -645,7 +641,7 @@
     padding: 0 0.6em;
   }
   .date {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -702,76 +698,67 @@
     align-items: center;
   }
 }
-
-/* Tablet (Portrait) */
 @media only screen and (min-width: 481px) and (max-width: 1024px) and (orientation: portrait) {
   .backdrop,
   .slide {
     position: absolute;
   }
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    cursor: pointer;
-    color: rgb(255 255 255 / 0.6);
-    z-index: 4;
-    -webkit-tap-highlight-color: #fff0;
-    display: none;
-  }
-  .left-arrow {
-    left: 10px;
-  }
-  .right-arrow {
-    right: 10px;
-  }
   .featured-content,
   .plot-container {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     left: 0;
   }
   .plot,
   body {
     overflow: hidden;
   }
-  body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    cursor: pointer;
+    color: #fff;
+    z-index: 3;
+    display: none;
+    justify-content: center;
+    align-items: center;
   }
-  .fade-in {
-    opacity: 1 !important;
+  .arrow::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgb(12 110 162 / 0.7);
+    border-radius: 50%;
+    z-index: -1;
   }
-  .fade-out {
-    opacity: 0 !important;
+  .left-arrow {
+    left: 20px;
+    font-size: 12px;
   }
-  #homeTab {
-    top: -5em;
-    padding-bottom: 5em !important;
-    position: relative;
-    padding-bottom: calc(env(safe-area-inset-bottom) + 5em) !important;
-  }
-  .sections.homeSectionsContainer {
-    position: relative;
-    z-index: 8;
-    top: -150px;
+  .right-arrow {
+    right: 20px;
+    font-size: 12px;
   }
   .dots-container {
     position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%) scale(0.6);
+    top: calc(50% + 14vh);
+    right: 3%;
     z-index: 2;
     display: flex;
     gap: 5px;
-    background-color: #ffffff13;
+    background-color: #ffffff3d;
     border-radius: 50px;
     justify-content: center;
     align-items: center;
     width: 140px;
     height: 22px;
     transition: opacity 0.5s ease-in-out;
+    scale: 0.6;
   }
   .dot {
     display: inline-block;
@@ -783,19 +770,33 @@
     transition: background-color 0.3s;
   }
   .dot.active {
-    width: 27px;
+    width: 22px;
     height: 12px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 6px;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .fade-in {
+    opacity: 1 !important;
+  }
+  .fade-out {
+    opacity: 0 !important;
   }
   #slides-container {
     position: relative;
     width: 100vw;
-    height: 800px;
+    height: 70vh;
     overflow: hidden;
-    margin: 0;
-    padding: 0%;
-    top: -3.5em;
+    margin: 0 auto;
+    top: -7.5em;
+  }
+  .sections.homeSectionsContainer {
+    position: relative;
+    z-index: 8;
+    top: -25vh;
   }
   .slide {
     transition: opacity 0.5s ease-in-out;
@@ -813,158 +814,216 @@
   .slide:focus {
     outline: #fff solid 2px;
   }
-  .logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 50%;
-    max-width: 70%;
-    width: auto;
-    z-index: 4;
-    filter: brightness(1.5);
-  }
-  .featured-logo-blur {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 50%;
-    max-width: 70%;
-    width: auto;
-    scale: 1.01;
-    filter: blur(1.1rem);
-    z-index: 3;
+  .backdrop-container {
+    position: relative;
+    top: -40%;
+    right: -35%;
+    width: 70%;
+    height: 100%;
   }
   .backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 20%;
+    border-radius: 5px;
     z-index: 1;
     mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
-  .gradient-overlay {
+  .backdrop-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(0 0 0 / 0.65);
+    background-color: rgb(0 0 0 / 0.6);
+    border-radius: 5px;
     z-index: 2;
-    pointer-events: none;
     mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
+    );
+  }
+  .logo-container {
+    width: 45%;
+    height: 40%;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+  }
+  .logo {
+    position: relative;
+    max-height: 70%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    z-index: 4;
+    top: 10vh;
+    left: 6vw;
+    filter: brightness(1.5);
+  }
+  .featured-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #fff0;
+    color: #d3d3d3;
+    font-size: 22px;
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 2;
+  }
+  .plot-container {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    width: 90%;
+    height: 60%;
+    font-size: 15px;
+    padding: 10px 0 25px 15px;
+    border-radius: 5px;
+    z-index: 3;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+  }
+  .plot {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    left: 6vw;
+    position: absolute;
+    top: 10vh;
+  }
+  .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(to right, #000 49%, #fff0 70%);
+    z-index: 2;
+    mask-image: linear-gradient(
+      to top,
+      #fff0 2%,
+      rgb(0 0 0 / 0.5) 6%,
+      #000000 8%
+    );
+    -webkit-mask-image: linear-gradient(
+      to top,
+      #fff0 2%,
+      rgb(0 0 0 / 0.5) 6%,
+      #000000 8%
     );
   }
   .genre {
     position: absolute;
-    bottom: 30%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: calc(50% + 0vh);
+    left: 6vw;
     text-align: center;
     color: #fff;
-    width: 90%;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-family: "Titillium Web", sans-serif;
-    font-size: 1.1em;
-    font-weight: 500;
+    font-family: "Archivo Narrow", sans-serif;
+    font-size: 14px;
     z-index: 4;
-    box-sizing: border-box;
   }
   .info-container {
     position: absolute;
+    top: calc(50% + -4vh);
     display: flex;
     align-items: center;
     justify-content: center;
-    bottom: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.1em;
+    left: 6vw !important;
     color: #fff;
-    z-index: 5;
-    width: 100%;
+    z-index: 4;
   }
   .rating-value {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 500;
+    font-family: "Archivo Narrow", sans-serif;
     display: flex;
     align-items: center;
+    z-index: 5;
+    position: relative;
   }
-  .date {
-    font-family: "Titillium Web", sans-serif;
+  .runTime {
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
-    margin-left: 2px;
+    margin: 0 8px;
+    margin-right: -3px;
+  }
+  .rating-value img {
+    margin-right: 6px;
   }
   .tomato-rating {
     display: flex;
     align-items: center;
+    margin-left: 0;
   }
-  .tomato-logo {
-    margin-right: 3px;
-  }
-  .critic-logo {
-    margin-left: 3px;
-  }
-  .imdb-logo {
-    margin-right: 3px;
+  .tomato-rating img {
+    margin-left: 5px;
   }
   .age-rating {
     display: flex;
     align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 5px;
     background: rgb(255 255 255 / 0.8);
     color: #000;
     border: none;
     font-weight: 600;
     white-space: nowrap;
-    padding: 0 0.4em;
+    padding: 0 0.6em;
+  }
+  .date {
+    font-family: "Archivo Narrow", sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 2px;
   }
   .separator-icon {
     margin-left: 5px;
     margin-right: 5px;
-    font-size: 1px;
+    font-size: 10px;
     color: aquamarine;
-  }
-  .featured-content,
-  .plot {
-    display: none;
   }
   .button-container {
     position: absolute;
-    bottom: 13%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: calc(50% + 13vh);
+    left: 4em;
     display: flex;
-    gap: 15px;
-    z-index: 4;
+    z-index: 5;
+    justify-content: space-between;
+    width: 15em;
   }
   .play-button,
   .detail-button {
@@ -972,8 +1031,8 @@
     align-items: center;
     justify-content: center;
     padding: 8px 16px;
-    border: none;
-    border-radius: 20px;
+    border: solid 2px rgb(12 109 162 / 0.7);
+    border-radius: 25px;
     font-size: 14px;
     white-space: nowrap;
     cursor: pointer;
@@ -988,7 +1047,6 @@
   }
   .detail-button {
     background-color: rgb(12 109 162 / 0.5);
-    border: solid 1.5px rgb(12 109 162 / 0.8);
     color: #fff;
   }
   .play-button:hover,
@@ -1002,8 +1060,6 @@
     align-items: center;
   }
 }
-
-/* Tablet (Landscape) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .backdrop,
   .slide {
@@ -1011,7 +1067,7 @@
   }
   .featured-content,
   .plot-container {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     left: 0;
   }
   .plot,
@@ -1097,13 +1153,12 @@
     height: 135vh;
     overflow: hidden;
     margin: 0 auto;
-    /*border-radius: 15px;*/
     top: -7.5em;
   }
   .sections.homeSectionsContainer {
     position: relative;
     z-index: 8;
-    top: -15em;
+    top: -50vh;
   }
   .slide {
     transition: opacity 0.5s ease-in-out;
@@ -1140,13 +1195,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .backdrop-overlay {
@@ -1162,13 +1217,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .logo-container {
@@ -1188,7 +1243,7 @@
     object-fit: contain;
     z-index: 4;
     top: 6em;
-    left: 5em;
+    left: 5vw;
     filter: brightness(1.5);
   }
   .featured-content {
@@ -1225,7 +1280,7 @@
     line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    left: 4.7em;
+    left: 5vw;
     position: absolute;
     top: 6.5em;
   }
@@ -1241,45 +1296,44 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .genre {
     position: absolute;
-    top: calc(50% + 1.5em);
-    left: 5em;
+    top: calc(50% + 3vh);
+    left: 5vw;
     text-align: center;
     color: #fff;
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-size: 14px;
     z-index: 4;
   }
   .info-container {
     position: absolute;
-    top: calc(50% + -1em);
+    top: calc(50% + -6vh);
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 2em !important;
+    left: 5vw !important;
     color: #fff;
     z-index: 4;
   }
   .rating-value {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     display: flex;
     align-items: center;
-    margin: 0 3em;
     z-index: 5;
     position: relative;
   }
   .runTime {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -1311,7 +1365,7 @@
     padding: 0 0.6em;
   }
   .date {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -1327,11 +1381,11 @@
   .button-container {
     position: absolute;
     top: calc(50% + 7.5em);
-    left: 4em;
+    left: 5vw;
     display: flex;
     z-index: 5;
     justify-content: space-between;
-    width: 15em;
+    width: 14em;
   }
   .play-button,
   .detail-button {
@@ -1368,8 +1422,6 @@
     align-items: center;
   }
 }
-
-/* Laptop (Small to Medium Screens) */
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
   .backdrop,
   .slide {
@@ -1377,7 +1429,7 @@
   }
   .featured-content,
   .plot-container {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     left: 0;
   }
   .plot,
@@ -1418,7 +1470,7 @@
   }
   .dots-container {
     position: absolute;
-    top: calc(50% + 10em);
+    top: calc(50% + 26vh);
     right: 3%;
     z-index: 2;
     display: flex;
@@ -1463,7 +1515,6 @@
     height: 95vh;
     overflow: hidden;
     margin: 0 auto;
-    /*border-radius: 15px;*/
     top: -7.8em;
   }
   .sections.homeSectionsContainer {
@@ -1506,13 +1557,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .backdrop-overlay {
@@ -1528,13 +1579,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .logo-container {
@@ -1554,7 +1605,7 @@
     object-fit: contain;
     z-index: 4;
     top: 10em;
-    left: 8em;
+    left: 6vw;
     filter: brightness(1.5);
   }
   .featured-content {
@@ -1591,9 +1642,9 @@
     line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    left: 7.9em;
+    left: 6vw;
     position: absolute;
-    top: 10em;
+    top: 20vh;
   }
   .gradient-overlay {
     position: absolute;
@@ -1607,22 +1658,22 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .genre {
     position: absolute;
     top: calc(50% + 50px);
-    left: 8.4em;
+    left: 6vw;
     text-align: center;
     color: #fff;
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-size: 14px;
     z-index: 4;
   }
@@ -1632,20 +1683,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 2em !important;
+    left: 6vw !important;
     color: #fff;
     z-index: 4;
   }
   .rating-value {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     display: flex;
     align-items: center;
-    margin: 0 6em;
     z-index: 5;
     position: relative;
   }
   .runTime {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -1677,7 +1727,7 @@
     padding: 0 0.6em;
   }
   .date {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -1692,12 +1742,12 @@
   }
   .button-container {
     position: absolute;
-    top: calc(50% + 10em);
-    left: 7.5em;
+    top: calc(50% + 25vh);
+    left: 5vw;
     display: flex;
     z-index: 5;
     justify-content: space-between;
-    width: 16em;
+    width: 14em;
   }
   .play-button,
   .detail-button {
@@ -1734,8 +1784,6 @@
     align-items: center;
   }
 }
-
-/* Large Screens (2K) */
 @media only screen and (min-width: 1441px) and (max-width: 2560px) {
   .backdrop,
   .slide {
@@ -1743,7 +1791,7 @@
   }
   .featured-content,
   .plot-container {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     left: 0;
   }
   .plot,
@@ -1784,7 +1832,7 @@
   }
   .dots-container {
     position: absolute;
-    top: calc(50% + 13em);
+    top: calc(50% + 21vh);
     right: 3%;
     z-index: 2;
     display: flex;
@@ -1829,7 +1877,6 @@
     height: 95vh;
     overflow: hidden;
     margin: 0 auto;
-    /*border-radius: 15px;*/
     top: -6.8em;
   }
   .layout-desktop .sections.homeSectionsContainer {
@@ -1837,13 +1884,11 @@
     z-index: 8;
     top: -20em;
   }
-
   .layout-mobile .sections.homeSectionsContainer {
     position: relative;
     z-index: 8;
     top: -20em;
-}
-
+  }
   .slide {
     transition: opacity 0.5s ease-in-out;
     position: absolute;
@@ -1879,13 +1924,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .backdrop-overlay {
@@ -1901,13 +1946,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .logo-container {
@@ -1966,7 +2011,7 @@
     -webkit-box-orient: vertical;
     left: 7.9em;
     position: absolute;
-    top: 190px;
+    top: 20vh;
   }
   .gradient-overlay {
     position: absolute;
@@ -1980,13 +2025,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .genre {
@@ -1995,7 +2040,7 @@
     left: 8.4em;
     text-align: center;
     color: #fff;
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-size: 14px;
     z-index: 4;
   }
@@ -2010,7 +2055,7 @@
     z-index: 4;
   }
   .rating-value {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     display: flex;
     align-items: center;
     margin: 0 6em;
@@ -2018,7 +2063,7 @@
     position: relative;
   }
   .runTime {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -2050,7 +2095,7 @@
     padding: 0 0.6em;
   }
   .date {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -2065,7 +2110,7 @@
   }
   .button-container {
     position: absolute;
-    top: calc(50% + 180px);
+    top: calc(50% + 20vh);
     left: 7.5em;
     display: flex;
     z-index: 5;
@@ -2107,8 +2152,6 @@
     align-items: center;
   }
 }
-
-/* Extra Large Screens (4K) */
 @media only screen and (min-width: 2561px) {
   .backdrop,
   .slide {
@@ -2116,7 +2159,7 @@
   }
   .featured-content,
   .plot-container {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     left: 0;
   }
   .plot,
@@ -2157,7 +2200,7 @@
   }
   .dots-container {
     position: absolute;
-    top: calc(50% + 13em);
+    top: calc(50% + 21vh);
     right: 3%;
     z-index: 2;
     display: flex;
@@ -2202,13 +2245,12 @@
     height: 95vh;
     overflow: hidden;
     margin: 0 auto;
-    /*border-radius: 15px;*/
     top: -6.8em;
   }
   .sections.homeSectionsContainer {
     position: relative;
     z-index: 8;
-    top: -20em;
+    top: -25vh;
   }
   .slide {
     transition: opacity 0.5s ease-in-out;
@@ -2245,13 +2287,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .backdrop-overlay {
@@ -2267,13 +2309,13 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .logo-container {
@@ -2293,7 +2335,7 @@
     object-fit: contain;
     z-index: 4;
     top: 10em;
-    left: 8em;
+    left: 5vw;
     filter: brightness(1.5);
   }
   .featured-content {
@@ -2330,9 +2372,9 @@
     line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    left: 7.9em;
+    left: 5vw;
     position: absolute;
-    top: 190px;
+    top: 18vh;
   }
   .gradient-overlay {
     position: absolute;
@@ -2346,45 +2388,44 @@
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
     -webkit-mask-image: linear-gradient(
       to top,
       #fff0 2%,
       rgb(0 0 0 / 0.5) 6%,
-      rgb(0 0 0) 8%
+      #000000 8%
     );
   }
   .genre {
     position: absolute;
-    top: calc(50% + 50px);
-    left: 8.4em;
+    top: calc(50% + 5vh);
+    left: 5vw;
     text-align: center;
     color: #fff;
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-size: 14px;
     z-index: 4;
   }
   .info-container {
     position: absolute;
-    top: calc(50% + 0px);
+    top: calc(50% + 0vh);
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 2em !important;
+    left: 5vw !important;
     color: #fff;
     z-index: 4;
   }
   .rating-value {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     display: flex;
     align-items: center;
-    margin: 0 6em;
     z-index: 5;
     position: relative;
   }
   .runTime {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -2416,7 +2457,7 @@
     padding: 0 0.6em;
   }
   .date {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Archivo Narrow", sans-serif;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -2431,12 +2472,12 @@
   }
   .button-container {
     position: absolute;
-    top: calc(50% + 180px);
-    left: 7.5em;
+    top: calc(50% + 20vh);
+    left: 10vh;
     display: flex;
     z-index: 5;
     justify-content: space-between;
-    width: 16em;
+    width: 15em;
   }
   .play-button,
   .detail-button {

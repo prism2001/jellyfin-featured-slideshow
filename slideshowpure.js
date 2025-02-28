@@ -161,7 +161,7 @@ const slidesInit = async () => {
     } else {
       const naSpan = document.createElement("span");
       naSpan.textContent = "N/A ";
-      naSpan.style.color = "#fff9"; // Apply the color
+      naSpan.style.color = "#fff9";
       valueElement = naSpan;
     }
     if (criticRating === undefined || criticRating <= 59) {
@@ -185,7 +185,7 @@ const slidesInit = async () => {
     if (item.OfficialRating) {
       ageRatingDiv.innerHTML = `${item.OfficialRating}`;
     } else {
-      ageRatingDiv.innerHTML = `<span style="color: #fff9;">N/A</span>`;
+      ageRatingDiv.innerHTML = `N/A`;
     }
     const premiereDate = document.createElement("div");
     premiereDate.className = "date";

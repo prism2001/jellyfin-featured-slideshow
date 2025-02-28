@@ -142,9 +142,9 @@ const slidesInit = async () => {
     ratingTest.appendChild(imdbLogo);
     if (typeof rating === "number") {
       const formattedRating = rating.toFixed(1);
-      ratingTest.innerHTML += `${formattedRating} ⭐`;
+      ratingTest.innerHTML += `${formattedRating}`;
     } else {
-      ratingTest.innerHTML += `N/A ⭐`;
+      ratingTest.innerHTML += `<span style="color: #fff9;">N/A</span>`;
     }
     ratingTest.appendChild(createSeparator());
     const tomatoRatingDiv = document.createElement("div");
@@ -159,7 +159,10 @@ const slidesInit = async () => {
     if (typeof criticRating === "number") {
       valueElement = document.createTextNode(`${criticRating}% `);
     } else {
-      valueElement = document.createTextNode(`N/A `);
+      const naSpan = document.createElement("span");
+      naSpan.textContent = "N/A ";
+      naSpan.style.color = "#fff9"; // Apply the color
+      valueElement = naSpan;
     }
     if (criticRating === undefined || criticRating <= 59) {
       criticLogo.src =
@@ -182,15 +185,21 @@ const slidesInit = async () => {
     if (item.OfficialRating) {
       ageRatingDiv.innerHTML = `${item.OfficialRating}`;
     } else {
-      ageRatingDiv.innerHTML = `N/A`;
+      ageRatingDiv.innerHTML = `<span style="color: #fff9;">N/A</span>`;
     }
-    const calender = "📅";
     const premiereDate = document.createElement("div");
     premiereDate.className = "date";
-    const year = date ? new Date(date).getFullYear() : "N/A";
-    premiereDate.textContent = isNaN(year) ? "N/A" : year;
+    const year = date ? new Date(date).getFullYear() : NaN;
+    if (isNaN(year)) {
+      const naSpan = document.createElement("span");
+      naSpan.textContent = "N/A";
+      naSpan.style.color = "#fff9";
+      premiereDate.innerHTML = "";
+      premiereDate.appendChild(naSpan);
+    } else {
+      premiereDate.textContent = year;
+    }
     ratingTest.appendChild(tomatoRatingDiv);
-    ratingTest.appendChild(document.createTextNode(calender));
     ratingTest.appendChild(premiereDate);
     ratingTest.appendChild(createSeparator());
     ratingTest.appendChild(ageRatingDiv);
@@ -214,7 +223,7 @@ const slidesInit = async () => {
     const playButton = document.createElement("button");
     playButton.className = "play-button";
     playButton.innerHTML = `
-  <span class="play-icon"><i class="material-icons">play_circle</i></span>
+  <span class="play-icon"><i class="material-icons">play_circle_fill</i></span>
   <span class="play-text">Play</span>
 `;
     playButton.onclick = async () => {

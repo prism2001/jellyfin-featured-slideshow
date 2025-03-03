@@ -403,6 +403,15 @@ const slidesInit = async () => {
     });
   };
   const initializeSlideshow = () => {
+    var slideInterval = null;
+    class SlideTimer {
+      constructor(fnctn, time) {
+        var timerObject = setInterval(fnctn, time);
+        this.stop = function () { if (timerObject) { clearInterval(timerObject); timerObject = null; } return this; };
+        this.start = function () { if (!timerObject) { this.stop(); timerObject = setInterval(fnctn, time); } return this; };
+        this.restart = function () { return this.stop().start(); };
+      }
+    }
     const slides = document.querySelectorAll(".slide");
     createPaginationDots();
     const container = document.getElementById("slides-container");
@@ -414,6 +423,7 @@ const slidesInit = async () => {
       isTransitioning = !0;
       currentSlideIndex = (index + slides.length) % slides.length;
       showSlide(currentSlideIndex);
+      slideInterval.restart();
       setTimeout(() => {
         isTransitioning = !1;
       }, 500);
@@ -426,11 +436,11 @@ const slidesInit = async () => {
     if (slides.length > 0) {
       showSlide(currentSlideIndex);
       container.style.display = "block";
-      setTimeout(() => {
-        setInterval(() => {
-          updateCurrentSlide(currentSlideIndex + 1);
-        }, shuffleInterval);
-      }, 8000);
+      slideInterval =
+      new SlideTimer(function() {
+        updateCurrentSlide(currentSlideIndex + 1);
+      }, shuffleInterval);
+      
     }
     slides.forEach((slide) => {
       slide.addEventListener(

@@ -126,16 +126,13 @@ const initJellyfinData = (callback) => {
   try {
     const apiClient = window.ApiClient;
     STATE.jellyfinData = {
-      userId: apiClient._currentUser?.Id ||
-        apiClient._serverInfo?.UserId ||
-        apiClient.getCurrentUserId?.() ||
-        apiClient.currentUser?.Id ||
+      userId: apiClient.getCurrentUserId ||
         "Not Found",
       appName: apiClient._appName || "Not Found",
       appVersion: apiClient._appVersion || "Not Found",
       deviceName: apiClient._deviceName || "Not Found",
       deviceId: apiClient._deviceId || "Not Found",
-      accessToken: apiClient._serverInfo?.AccessToken || "Not Found",
+      accessToken: apiClient._serverInfo.AccessToken || "Not Found",
       serverAddress: apiClient._serverAddress || "Not Found"
     };
     if (callback && typeof callback === 'function') {
@@ -164,9 +161,9 @@ const initLoadingScreen = () => {
   loadingDiv.id = "page-loader";
   loadingDiv.innerHTML = `
     <h1>
-      <img src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/refs/heads/master/branding/android/logo_clean.svg" 
+      <img src="https://i.imgur.com/DAYQRfa.png" 
           alt="Server Logo" 
-          style="width: 350px; height: auto;">
+          style="width: 300px; height: auto;">
     </h1>
     <div class="docspinner-loader">
       <div class="loader-spinner-layer"></div>
@@ -654,7 +651,7 @@ const VisibilityObserver = {
 
     const isVisible =
       window.location.hash.includes("#/home.html") &&
-      activeTab?.getAttribute("data-index") === "0";
+      activeTab.getAttribute("data-index") === "0";
 
     container.style.display = isVisible ? "block" : "none";
 
@@ -935,7 +932,7 @@ const SlideCreator = {
     return SlideUtils.createElement('button', {
       className: 'play-button',
       innerHTML: `
-      <span class="play-icon"><i class="material-icons">play_circle_fill</i></span>
+      <span class="play-icon"><i class="material-icons">play_circle</i></span>
       <span class="play-text">Play</span>
     `,
       onclick: (e) => {

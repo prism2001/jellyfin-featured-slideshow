@@ -161,7 +161,7 @@ const initLoadingScreen = () => {
   loadingDiv.id = "page-loader";
   loadingDiv.innerHTML = `
     <h1>
-      <img src="https://i.imgur.com/DAYQRfa.png" 
+      <img src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/refs/heads/master/branding/android/logo_clean.svg" 
           alt="Server Logo" 
           style="width: 300px; height: auto;">
     </h1>

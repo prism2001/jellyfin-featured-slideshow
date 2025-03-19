@@ -1,8 +1,8 @@
 /*
- * Jellyfin Slideshow by M0RPH3US - Core Module
+ * Jellyfin Slideshow by M0RPH3US v2.0.1
  */
 
-// Configuration
+//Core Module Configuration
 const CONFIG = {
   IMAGE_URLS: {
     imdbLogo: 'https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg',
@@ -10,7 +10,7 @@ const CONFIG = {
     freshTomato: 'https://i.imgur.com/iMfwDk7.png',
     rottenTomato: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rotten_Tomatoes_rotten.svg/1024px-Rotten_Tomatoes_rotten.svg.png'
   },
-  shuffleInterval: 8000,
+  shuffleInterval: 8500,
   retryInterval: 500,
   minSwipeDistance: 50,
   loadingCheckInterval: 100,
@@ -18,7 +18,7 @@ const CONFIG = {
   maxMovies: 15,
   maxTvShows: 15,
   maxItems: 500,
-  preloadCount: 2,
+  preloadCount: 3,
   fadeTransitionDuration: 500
 };
 
@@ -326,7 +326,7 @@ const SlideUtils = {
    */
   createSeparator() {
     const separator = document.createElement('i');
-    separator.className = "material-icons radio_button_off separator-icon";
+    separator.className = "radio_button_off separator-icon"; //material-icons 
     return separator;
   },
 
@@ -714,10 +714,10 @@ const SlideCreator = {
 
     const backdrop = SlideUtils.createElement('img', {
       className: 'backdrop low-quality',
-      src: `${serverAddress}/Items/${itemId}/Images/Backdrop/0?quality=60&fillWidth=480`,
+      src: `${serverAddress}/Items/${itemId}/Images/Backdrop/0?quality=40`, //&fillWidth=480
       alt: 'Backdrop',
       loading: 'eager',
-      'data-high-quality': `${serverAddress}/Items/${itemId}/Images/Backdrop/0?quality=90`
+      'data-high-quality': `${serverAddress}/Items/${itemId}/Images/Backdrop/0?quality=80`
     });
 
     backdrop.onload = function () {
@@ -737,7 +737,7 @@ const SlideCreator = {
       src: `${serverAddress}/Items/${itemId}/Images/Logo?quality=30`,
       alt: 'Logo',
       loading: 'eager',
-      'data-high-quality': `${serverAddress}/Items/${itemId}/Images/Logo?quality=90`
+      'data-high-quality': `${serverAddress}/Items/${itemId}/Images/Logo?quality=80`
     });
 
     logo.onload = function () {
@@ -833,9 +833,16 @@ const SlideCreator = {
     ratingTest.appendChild(imdbLogo);
 
     if (typeof rating === 'number') {
-      ratingTest.innerHTML += rating.toFixed(1);
+      const ratingSpan = document.createElement('span');
+      ratingSpan.textContent = rating.toFixed(1);
+      ratingSpan.style.marginRight = '5px';
+      ratingTest.appendChild(ratingSpan);
     } else {
-      ratingTest.innerHTML += '<span style="color: #fff9;">N/A</span>';
+      const naSpan = document.createElement('span');
+      naSpan.innerHTML = 'N/A';
+      naSpan.style.color = '#fff9';
+      naSpan.style.marginRight = '5px';
+      ratingTest.appendChild(naSpan);
     }
 
     ratingTest.appendChild(SlideUtils.createSeparator());
@@ -904,7 +911,7 @@ const SlideCreator = {
       const milliseconds = runtime / 10000;
       const currentTime = new Date();
       const endTime = new Date(currentTime.getTime() + milliseconds);
-      const options = { hour: '2-digit', minute: '2-digit', hour12: true };
+      const options = { hour: '2-digit', minute: '2-digit', hour12: false };
       const formattedEndTime = endTime.toLocaleTimeString([], options);
       runTimeElement.textContent = `Ends at ${formattedEndTime}`;
     } else {
@@ -973,6 +980,7 @@ const SlideCreator = {
    * @returns {HTMLElement} Placeholder slide element
    */
   createLoadingPlaceholder(itemId) {
+
     const placeholder = SlideUtils.createElement('a', {
       className: 'slide placeholder',
       'data-item-id': itemId,
@@ -1132,12 +1140,12 @@ const SlideshowManager = {
 
       let currentSlide = document.querySelector(`.slide[data-item-id="${currentItemId}"]`);
       if (!currentSlide) {
-        const placeholder = SlideCreator.createLoadingPlaceholder(currentItemId);
-        container.appendChild(placeholder);
+        //const placeholder = SlideCreator.createLoadingPlaceholder(currentItemId);
+        //container.appendChild(placeholder);
 
-        placeholder.style.display = 'block';
-        void placeholder.offsetWidth;
-        placeholder.style.opacity = '1';
+        //placeholder.style.display = 'block';
+        //void placeholder.offsetWidth;
+        //placeholder.style.opacity = '1';
 
         currentSlide = await SlideCreator.createSlideForItemId(currentItemId);
 
@@ -1271,7 +1279,7 @@ const SlideshowManager = {
  */
   pruneSlideCache() {
     const currentIndex = STATE.slideshow.currentSlideIndex;
-    const keepRange = 3;
+    const keepRange = 5;
 
     Object.keys(STATE.slideshow.createdSlides).forEach(itemId => {
       const index = STATE.slideshow.itemIds.indexOf(itemId);

@@ -1,3 +1,7 @@
+/*
+ * Jellyfin Slideshow by M0RPH3US v2.0.2
+ */
+
 @import url(https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap);
 
 .bar-loading {
@@ -230,7 +234,7 @@
 
 .plot-container {
   position: absolute;
-  bottom: 20vh;
+  top: calc(50% + 8vh);
   color: #fff;
   height: 15%;
   width: 90%;
@@ -253,7 +257,7 @@
 
 .genre {
   position: absolute;
-  top: calc(50% + 50px);
+  top: calc(50% + 4vh);
   left: 4vw;
   text-align: center;
   color: #fff;
@@ -312,7 +316,7 @@
 
 .info-container {
   position: absolute;
-  top: calc(50% + 0px);
+  top: calc(50% + 0vh);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -387,7 +391,6 @@
 
 /*Portrait-Modes Phone*/
 @media only screen and (max-width: 767px) and (orientation: portrait) {
-
   .plot-container {
     display: none;
   }
@@ -444,18 +447,22 @@
   }
 
   .genre {
-    top: calc(50% + 11em);
+    top: calc(50% + 15vh);
     left: 50%;
     width: 100%;
     transform: translateX(-50%);
   }
 
   .info-container {
-    top: calc(50% + 8em);
+    top: calc(50% + 10vh);
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
   }
+
+  .dots-container {
+    top: calc(50% + 20vh);
+}
 
   .button-container {
     top: calc(50% + 25vh);
@@ -509,14 +516,25 @@
   }
 
   .info-container {
-    top: calc(50% + -35px);
+    top: calc(50% + -10vh);
   }
 
   .plot-container {
-    bottom: 30vh;
+    top: calc(50% + 6vh);
   }
 
   .genre {
-    top: calc(50% + 5px);
+    top: calc(50% + -1vh);
+  }
 }
+
+@media only screen and (min-width: 2560px) {
+
+  .button-container {
+    top: calc(50% + 15vh);
+  }
+
+  .dots-container {
+    top: calc(50% + 15vh);
+  }
 }

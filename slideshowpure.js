@@ -1,5 +1,5 @@
 /*
- * Jellyfin Slideshow by M0RPH3US v2.0.3
+ * Jellyfin Slideshow by M0RPH3US v2.0.4
  */
 
 //Core Module Configuration
@@ -10,7 +10,7 @@ const CONFIG = {
     freshTomato: 'https://i.imgur.com/iMfwDk7.png',
     rottenTomato: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rotten_Tomatoes_rotten.svg/1024px-Rotten_Tomatoes_rotten.svg.png'
   },
-  shuffleInterval: 85000,
+  shuffleInterval: 8500,
   retryInterval: 500,
   minSwipeDistance: 50,
   loadingCheckInterval: 100,

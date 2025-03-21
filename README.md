@@ -7,58 +7,26 @@ The fullscreen version has a new look (in beta), and support for different scree
 
 Thanks to the Man, the Legend [BobHasNoSoul](https://github.com/BobHasNoSoul) for his work on the [jellyfinfeatured](https://github.com/BobHasNoSoul/jellyfin-featured) and [SethBacon](https://forum.jellyfin.org/u-sethbacon) and [TedHinklater](https://github.com/tedhinklater) for their take on the [Jellyfin-Featured-Content-Bar](https://github.com/tedhinklater/Jellyfin-Featured-Content-Bar). 
 
-Here I present my version of the same with some code improvements, loading optimizations, and Security Enhancements. Works best with the [Zombie theme](https://github.com/MakD/zombie-release) (_Shameless Plug_ `@import url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@latest/zombie_revived.css);`, visit the repo for more color schemes), but it fits with every other theme the creators have put their hard work in. You should edit the color accents in the CSS to match yours.
-
-# For Release v1.0, existing users need to roll back to the stock home-html.xxxxxx.chunk.js, index.html & main.jellyfin.bundle.js. In order to do so, you can restore the files you have taken backup as instructed before, or just remove the edits made earlier. 
+Here I present my version with some code improvements, loading optimizations, and security enhancements. Works best with the [Zombie theme](https://github.com/MakD/zombie-release) (_Shameless Plug_ `@import url(https://cdn.jsdelivr.net/gh/MakD/zombie-release@latest/zombie_revived.css);`, visit the repo for more color schemes).
 
 
-
-> <ins>**Before Installing, please take a backup of your index.html, main.jellyfin.bundle.js and home-html.xxxxxx.chunk.js files**<ins>
+> <ins>**Before Installing, please take a backup of your index.html file**<ins>
 
 <details>
-<summary> Desktop Layout - Normal </summary>
-  
-![Jellyfin Desktop Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Web.png)
-  
-</details>
-
-<details>
-<summary> Desktop Layout - Fullscreen </summary>
+<summary> Desktop Layout </summary>
   
 ![Jellyfin Desktop Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Web%20-%20Fullscreen%20Mode.png)
-
-- Download the slideshowpure-fullsreen.css, rename it to `slideshowpure,css`, and replace the default CSS with the full-screen one.
   
 </details>
 
 <details>
 
-<summary> Mobile Layout - Fullscreen </summary>
+<summary> Mobile Layout </summary>
   
 ![Jellyfin Mobile Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Mobile-Fullscreen.png)
 
 </details>
 
-<details>
-  
-<summary> Mobile Layout - Normal </summary>
-  
-![Jellyfin Mobile Layout](https://raw.githubusercontent.com/MakD/Jellyfin-Media-Bar/refs/heads/main/img/Jelly-Mobile.png)
-
-</details>
-
-
-# Prepping the Environment
-
-<details>
-  
-<summary> Steps </summary>
-
-1. Create a folder `avatars` in your `jellyfin-web` folder. (Usually in C:\Program Files\Jellyfin\Server)
-2. Download the files `slideshowpure.js` and `slideshowpure.css`
-3. Paste them inside the avatars folder created, and you are ready to venture down the rabbit hole.
-
-</details>
 
 # Prepping the files
 <details>
@@ -69,9 +37,8 @@ Here I present my version of the same with some code improvements, loading optim
   2. Search for `</head>`
   3. Just before the `</head>`, plug the below code
 ```
-    <link rel="preload" href="/web/avatars/slideshowpure.css" as="style" />
-    <link rel="stylesheet" href="/web/avatars/slideshowpure.css" />
-    <script defer src="/web/avatars/slideshowpure.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.css" />
+    <script async src="https://cdn.jsdelivr.net/gh/MakD/Jellyfin-Media-Bar@latest/slideshowpure.js"></script>
 ```
 </details>
 
@@ -103,6 +70,6 @@ The next time it loads, it will display these items.
   
 <summary> Roll Back </summary>
 
-Restore the `index.html`, `home-html.xxxxxx.chunk.js`, and `main.jellyfin.bundle.js` and you are good to go!!!
+Restore the `index.html` file / remove the lines added and you are good to go!!!
 
 </details>

@@ -1,5 +1,5 @@
 /*
- * Jellyfin Slideshow by M0RPH3US v2.0.2
+ * Jellyfin Slideshow by M0RPH3US v2.0.3
  */
 
 //Core Module Configuration
@@ -10,7 +10,7 @@ const CONFIG = {
     freshTomato: 'https://i.imgur.com/iMfwDk7.png',
     rottenTomato: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Rotten_Tomatoes_rotten.svg/1024px-Rotten_Tomatoes_rotten.svg.png'
   },
-  shuffleInterval: 8500,
+  shuffleInterval: 85000,
   retryInterval: 500,
   minSwipeDistance: 50,
   loadingCheckInterval: 100,
@@ -133,6 +133,7 @@ const initJellyfinData = (callback) => {
       deviceName: apiClient._deviceName || "Not Found",
       deviceId: apiClient._deviceId || "Not Found",
       accessToken: apiClient._serverInfo.AccessToken || "Not Found",
+      serverId: apiClient._serverInfo.Id || "Not Found",
       serverAddress: apiClient._serverAddress || "Not Found"
     };
     if (callback && typeof callback === 'function') {
@@ -147,6 +148,64 @@ const initJellyfinData = (callback) => {
 /**
  * Creates and displays loading screen
  */
+/*const initLoadingScreen = () => {
+  const currentPath = window.location.href.toLowerCase();
+  const isHomePage =
+    currentPath.includes("/web/#/home.html") ||
+    currentPath.includes("/web/index.html#/home.html") ||
+    currentPath.endsWith("/web/");
+
+  if (!isHomePage) return;
+
+  const loadingDiv = document.createElement('div');
+  loadingDiv.className = "bar-loading";
+  loadingDiv.id = "page-loader";
+  loadingDiv.innerHTML = `
+    <h1>
+      <img src="/web/assets/img/banner-light.png" 
+          alt="Server Logo" 
+          style="width: 300px; height: auto;">
+    </h1>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  `;
+  document.body.appendChild(loadingDiv);
+
+  const progressBar = document.getElementById("progress-bar");
+  let progress = 0;
+  const progressInterval = setInterval(() => {
+    if (progress < 95) {
+      progress += Math.random() * 5;
+      progressBar.style.width = `${Math.min(progress, 100)}%`;
+    }
+  }, 200);
+
+  const checkInterval = setInterval(() => {
+    const loginFormLoaded = document.querySelector(".manualLoginForm");
+    const homePageLoaded =
+      document.querySelector(".homeSectionsContainer") &&
+      document.querySelector(".slide");
+
+    if (loginFormLoaded || homePageLoaded) {
+      clearInterval(progressInterval);
+      clearInterval(checkInterval);
+
+      progressBar.style.width = "100%";
+
+      // Add slight delay before fade-out to make 100% visible
+      setTimeout(() => {
+        const loader = document.querySelector('.bar-loading');
+        if (loader) {
+          loader.style.opacity = 0;
+          loader.style.transition = 'opacity 700ms';
+          setTimeout(() => loader.remove(), 700);
+        }
+      }, 200); // Delay of 200ms to let 100% be visible
+    }
+  }, CONFIG.loadingCheckInterval);
+};*/
+
 const initLoadingScreen = () => {
   const currentPath = window.location.href.toLowerCase();
   const isHomePage =
@@ -161,15 +220,39 @@ const initLoadingScreen = () => {
   loadingDiv.id = "page-loader";
   loadingDiv.innerHTML = `
     <h1>
-      <img src="https://raw.githubusercontent.com/jellyfin/jellyfin-ux/refs/heads/master/branding/android/logo_clean.svg" 
+      <img src="/web/assets/img/banner-light.png" 
           alt="Server Logo" 
           style="width: 300px; height: auto;">
     </h1>
-    <div class="docspinner-loader">
-      <div class="loader-spinner-layer"></div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
     </div>
   `;
   document.body.appendChild(loadingDiv);
+
+  // Improved progress animation
+  const progressBar = document.getElementById("progress-bar");
+  let progress = 0;
+  let lastIncrement = 5;
+  
+  // Instead of consistent jumps, we'll use a more natural progression
+  const progressInterval = setInterval(() => {
+    if (progress < 95) {
+      // Start with larger jumps that get smaller as we approach 95%
+      lastIncrement = Math.max(0.5, lastIncrement * 0.98);
+      
+      // Add some randomness to make it look more natural
+      const randomFactor = 0.5 + Math.random();
+      
+      // Calculate the actual increment and apply it
+      const increment = lastIncrement * randomFactor;
+      progress += increment;
+      
+      // Apply with a CSS transition for smoother appearance
+      progressBar.style.transition = 'width 0.2s ease-out';
+      progressBar.style.width = `${Math.min(progress, 95)}%`;
+    }
+  }, 180);  // Slightly more frequent updates for smoother appearance
 
   const checkInterval = setInterval(() => {
     const loginFormLoaded = document.querySelector(".manualLoginForm");
@@ -178,17 +261,20 @@ const initLoadingScreen = () => {
       document.querySelector(".slide");
 
     if (loginFormLoaded || homePageLoaded) {
-      const loader = document.querySelector('.bar-loading');
-      if (loader && typeof $ !== 'undefined') {
-        $(loader).fadeOut(700, () => {
-          loader.remove();
-        });
-      } else if (loader) {
-        loader.style.opacity = 0;
-        loader.style.transition = 'opacity 700ms';
-        setTimeout(() => loader.remove(), 700);
-      }
+      clearInterval(progressInterval);
       clearInterval(checkInterval);
+
+      progressBar.style.width = "100%";
+
+      // Add slight delay before fade-out to make 100% visible
+      setTimeout(() => {
+        const loader = document.querySelector('.bar-loading');
+        if (loader) {
+          loader.style.opacity = 0;
+          loader.style.transition = 'opacity 200ms ease-out';
+          setTimeout(() => loader.remove(), 200);
+        }
+      }, 200); // Delay of 200ms to let 100% be visible
     }
   }, CONFIG.loadingCheckInterval);
 };
@@ -734,7 +820,7 @@ const SlideCreator = {
 
     const logo = SlideUtils.createElement('img', {
       className: 'logo low-quality',
-      src: `${serverAddress}/Items/${itemId}/Images/Logo?quality=30`,
+      src: `${serverAddress}/Items/${itemId}/Images/Logo?quality=40`,
       alt: 'Logo',
       loading: 'eager',
       'data-high-quality': `${serverAddress}/Items/${itemId}/Images/Logo?quality=80`
@@ -937,9 +1023,8 @@ const SlideCreator = {
    */
   createPlayButton(itemId) {
     return SlideUtils.createElement('button', {
-      className: 'play-button',
+      className: 'detailButton btnPlay play-button',
       innerHTML: `
-      <span class="play-icon"><i class="material-icons">play_circle</i></span>
       <span class="play-text">Play</span>
     `,
       onclick: (e) => {
@@ -957,18 +1042,17 @@ const SlideCreator = {
    */
   createDetailButton(itemId) {
     return SlideUtils.createElement('button', {
-      className: 'detail-button',
+      className: 'detailButton btnPlay detail-button',
       innerHTML: `
-      <span class="detail-icon"><i class="material-icons info_outline"></i></span>
       <span class="detail-text">Info</span>
     `,
       onclick: (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (window.Emby && window.Emby.Page) {
-          Emby.Page.show(`/details?id=${itemId}`);
+          Emby.Page.show(`/details?id=${itemId}&serverId=${STATE.jellyfinData.serverId}`);
         } else {
-          window.location.href = `#/details?id=${itemId}`;
+          window.location.href = `#/details?id=${itemId}&serverId=${STATE.jellyfinData.serverId}`;
         }
       }
     });
@@ -1010,22 +1094,23 @@ const SlideCreator = {
 
       const container = SlideUtils.getOrCreateSlidesContainer();
 
-      const placeholder = this.createLoadingPlaceholder(itemId);
-      container.appendChild(placeholder);
+      //const placeholder = this.createLoadingPlaceholder(itemId);
+      //container.appendChild(placeholder);
 
       const item = await ApiUtils.fetchItemDetails(itemId);
-      if (!item) {
+      /*if (!item) {
         placeholder.remove();
         return null;
-      }
+      }*/
 
       const slideElement = this.createSlideElement(item, item.Type === "Movie" ? "Movie" : "TV Show");
-      if (!slideElement) {
+      /*if (!slideElement) {
         placeholder.remove();
         return null;
-      }
+      }*/
 
-      container.replaceChild(slideElement, placeholder);
+      //container.replaceChild(slideElement, placeholder);
+      container.appendChild(slideElement);
 
       STATE.slideshow.createdSlides[itemId] = true;
 

@@ -1,5 +1,5 @@
 /*
- * Jellyfin Slideshow by M0RPH3US v2.0.5
+ * Jellyfin Slideshow by M0RPH3US v2.0.6
  */
 
 //Core Module Configuration
@@ -1423,7 +1423,7 @@ const SlideshowManager = {
       switch (e.key) {
         case 'ArrowRight':
           if (focusElement.classList.contains('detail-button')) {
-            focusElement.previousElementSibling?.focus(); // Move to Play Button
+            focusElement.previousElementSibling.focus(); // Move to Play Button
           } else {
             SlideshowManager.nextSlide();
           }
@@ -1432,7 +1432,7 @@ const SlideshowManager = {
           
         case 'ArrowLeft':
           if (focusElement.classList.contains('play-button')) {
-            focusElement.nextElementSibling?.focus(); // Move to Detail Button
+            focusElement.nextElementSibling.focus(); // Move to Detail Button
           } else {
             SlideshowManager.prevSlide();
           }

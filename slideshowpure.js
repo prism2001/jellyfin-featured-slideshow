@@ -1,5 +1,5 @@
 /*
- * Jellyfin Slideshow by M0RPH3US v2.0.6
+ * Jellyfin Slideshow by M0RPH3US v2.0.7
  */
 
 //Core Module Configuration
@@ -151,6 +151,7 @@ const initJellyfinData = (callback) => {
 /**
  * Creates and displays loading screen
  */
+
 const initLoadingScreen = () => {
   const currentPath = window.location.href.toLowerCase();
   const isHomePage =
@@ -171,33 +172,36 @@ const initLoadingScreen = () => {
     </h1>
     <div class="progress-container">
       <div class="progress-bar" id="progress-bar"></div>
+      <div class="progress-gap" id="progress-gap"></div>
+      <div class="unfilled-bar" id="unfilled-bar"></div>
     </div>
   `;
   document.body.appendChild(loadingDiv);
 
-  // Improved progress animation
+  setTimeout(() => {
+    loadingDiv.classList.add("show");
+    document.querySelector(".bar-loading h1 img").style.opacity = "1";
+    document.querySelector(".progress-container").style.opacity = "1";
+  }, 100);
+
   const progressBar = document.getElementById("progress-bar");
+  const unfilledBar = document.getElementById("unfilled-bar");
+
   let progress = 0;
   let lastIncrement = 5;
 
-  // Instead of consistent jumps, we'll use a more natural progression
   const progressInterval = setInterval(() => {
     if (progress < 95) {
-      // Start with larger jumps that get smaller as we approach 95%
       lastIncrement = Math.max(0.5, lastIncrement * 0.98);
-
-      // Add some randomness to make it look more natural
-      const randomFactor = 0.5 + Math.random();
-
-      // Calculate the actual increment and apply it
+      const randomFactor = 0.8 + Math.random() * 0.4;
       const increment = lastIncrement * randomFactor;
       progress += increment;
+      progress = Math.min(progress, 95);
 
-      // Apply with a CSS transition for smoother appearance
-      progressBar.style.transition = "width 0.2s ease-out";
-      progressBar.style.width = `${Math.min(progress, 95)}%`;
+      progressBar.style.width = `${progress}%`;
+      unfilledBar.style.width = `${100 - progress}%`;
     }
-  }, 180); // Slightly more frequent updates for smoother appearance
+  }, 150);
 
   const checkInterval = setInterval(() => {
     const loginFormLoaded = document.querySelector(".manualLoginForm");
@@ -209,20 +213,22 @@ const initLoadingScreen = () => {
       clearInterval(progressInterval);
       clearInterval(checkInterval);
 
+      progressBar.style.transition = "width 300ms ease-in-out";
       progressBar.style.width = "100%";
+      unfilledBar.style.width = "0%";
 
-      // Add slight delay before fade-out to make 100% visible
       setTimeout(() => {
         const loader = document.querySelector(".bar-loading");
         if (loader) {
+          loader.style.transition = "opacity 300ms ease-out";
           loader.style.opacity = 0;
-          loader.style.transition = "opacity 200ms ease-out";
-          setTimeout(() => loader.remove(), 200);
+          setTimeout(() => loader.remove(), 300);
         }
-      }, 200); // Delay of 200ms to let 100% be visible
+      }, 300);
     }
   }, CONFIG.loadingCheckInterval);
 };
+
 
 /**
  * Resets the slideshow state completely
@@ -361,7 +367,7 @@ const SlideUtils = {
    */
   createSeparator() {
     const separator = document.createElement("i");
-    separator.className = "material-icons radio_button_off separator-icon"; //material-icons
+    separator.className = "material-icons fiber_manual_record separator-icon"; //material-icons radio_button_off
     return separator;
   },
 
@@ -422,7 +428,7 @@ const SlideUtils = {
    */
   parseGenres(genresArray) {
     if (Array.isArray(genresArray) && genresArray.length > 0) {
-      return genresArray.slice(0, 3).join(" 🔹 ");
+      return genresArray.slice(0, 3).join(" ▫️ "); //🔹
     }
     return "No Genre Available";
   },
@@ -753,23 +759,15 @@ const SlideCreator = {
       target: "_top",
       rel: "noreferrer",
       tabIndex: 0,
-      style: {
-        display: "none",
-        opacity: "0",
-        transition: `opacity ${CONFIG.fadeTransitionDuration}ms ease-in-out`,
-      },
       "data-item-id": itemId,
     });
 
     const backdrop = SlideUtils.createElement("img", {
-      className: "backdrop low-quality",
-      src: `${serverAddress}/Items/${itemId}/Images/Backdrop/0?quality=40`,
+      className: "backdrop high-quality",
+      src: `${serverAddress}/Items/${itemId}/Images/Backdrop/0`,
       alt: "Backdrop",
       loading: "eager",
-      "data-high-quality": `${serverAddress}/Items/${itemId}/Images/Backdrop/0?quality=80`,
     });
-
-    backdrop.onload = function () { };
 
     const backdropOverlay = SlideUtils.createElement("div", {
       className: "backdrop-overlay",
@@ -781,14 +779,11 @@ const SlideCreator = {
     backdropContainer.append(backdrop, backdropOverlay);
 
     const logo = SlideUtils.createElement("img", {
-      className: "logo low-quality",
+      className: "logo high-quality",
       src: `${serverAddress}/Items/${itemId}/Images/Logo?quality=40`,
-      alt: "Logo",
+      alt: "logo",
       loading: "eager",
-      "data-high-quality": `${serverAddress}/Items/${itemId}/Images/Logo?quality=80`,
     });
-
-    logo.onload = function () { };
 
     const logoContainer = SlideUtils.createElement("div", {
       className: "logo-container",
@@ -1078,25 +1073,13 @@ const SlideCreator = {
 
       const container = SlideUtils.getOrCreateSlidesContainer();
 
-      //const placeholder = this.createLoadingPlaceholder(itemId);
-      //container.appendChild(placeholder);
-
       const item = await ApiUtils.fetchItemDetails(itemId);
-      /*if (!item) {
-        placeholder.remove();
-        return null;
-      }*/
 
       const slideElement = this.createSlideElement(
         item,
         item.Type === "Movie" ? "Movie" : "TV Show"
       );
-      /*if (!slideElement) {
-        placeholder.remove();
-        return null;
-      }*/
 
-      //container.replaceChild(slideElement, placeholder);
       container.appendChild(slideElement);
 
       STATE.slideshow.createdSlides[itemId] = true;
@@ -1113,37 +1096,21 @@ const SlideCreator = {
  * Manages slideshow functionality
  */
 const SlideshowManager = {
-  /**
-   * Creates pagination dots for the slideshow
-   * Exactly 5 dots that cycle regardless of total slides
-   */
-  createPaginationDots() {
-    const container = SlideUtils.getOrCreateSlidesContainer();
-    let dotsContainer = container.querySelector(".dots-container");
-    const parentContainer = container.parentElement || document.body;
 
-    if (dotsContainer) {
-      dotsContainer.remove();
+  createPaginationDots() {
+    let dotsContainer = document.querySelector(".dots-container");
+    if (!dotsContainer) {
+      dotsContainer = document.createElement("div");
+      dotsContainer.className = "dots-container";
+      document.getElementById("slides-container").appendChild(dotsContainer);
     }
 
-    dotsContainer = SlideUtils.createElement("div", {
-      className: "dots-container",
-      style: {
-        opacity: "0",
-        transition: `opacity ${CONFIG.fadeTransitionDuration}ms ease-in-out`,
-      },
-    });
-
-    const numDots = 5;
-
-    for (let i = 0; i < numDots; i++) {
-      const dot = SlideUtils.createElement("span", {
-        className: "dot",
-        "data-index": i,
-      });
+    for (let i = 0; i < 5; i++) {
+      const dot = document.createElement("span");
+      dot.className = "dot";
+      dot.setAttribute("data-index", i);
       dotsContainer.appendChild(dot);
     }
-    container.appendChild(dotsContainer);
     this.updateDots();
   },
 
@@ -1181,6 +1148,7 @@ const SlideshowManager = {
    * Updates current slide to the specified index
    * @param {number} index - Slide index to display
    */
+
   async updateCurrentSlide(index) {
     if (STATE.slideshow.isTransitioning) {
       return;
@@ -1193,50 +1161,35 @@ const SlideshowManager = {
       const totalItems = STATE.slideshow.totalItems;
 
       index = Math.max(0, Math.min(index, totalItems - 1));
-
       const currentItemId = STATE.slideshow.itemIds[index];
 
       let currentSlide = document.querySelector(
         `.slide[data-item-id="${currentItemId}"]`
       );
       if (!currentSlide) {
-        //const placeholder = SlideCreator.createLoadingPlaceholder(currentItemId);
-        //container.appendChild(placeholder);
-
-        //placeholder.style.display = 'block';
-        //void placeholder.offsetWidth;
-        //placeholder.style.opacity = '1';
-
         currentSlide = await SlideCreator.createSlideForItemId(currentItemId);
-
         this.upgradeSlideImageQuality(currentSlide);
 
         if (!currentSlide) {
           console.error(`Failed to create slide for item ${currentItemId}`);
           STATE.slideshow.isTransitioning = false;
-
           setTimeout(() => this.nextSlide(), 500);
           return;
         }
       }
 
-      const previousVisibleSlide = container.querySelector(
-        '.slide[style*="opacity: 1"]'
-      );
-
-      currentSlide.style.display = "block";
-      currentSlide.style.opacity = "0";
-      currentSlide.style.zIndex = "2";
+      const previousVisibleSlide = container.querySelector(".slide.active");
 
       if (previousVisibleSlide) {
-        previousVisibleSlide.style.zIndex = "1";
+        previousVisibleSlide.classList.remove("active");
       }
 
+      currentSlide.classList.add("active");
+
+      currentSlide.querySelector(".backdrop").classList.add("animate");
+      currentSlide.querySelector(".logo").classList.add("animate");
+
       STATE.slideshow.currentSlideIndex = index;
-
-      void currentSlide.offsetWidth;
-
-      currentSlide.style.opacity = "1";
 
       if (index === 0 || !previousVisibleSlide) {
         const dotsContainer = container.querySelector(".dots-container");
@@ -1249,17 +1202,12 @@ const SlideshowManager = {
         const allSlides = container.querySelectorAll(".slide");
         allSlides.forEach((slide) => {
           if (slide !== currentSlide) {
-            slide.style.display = "none";
-            slide.style.opacity = "0";
-            slide.style.zIndex = "0";
+            slide.classList.remove("active");
           }
         });
-
-        currentSlide.style.zIndex = "1";
       }, CONFIG.fadeTransitionDuration);
 
       this.preloadAdjacentSlides(index);
-
       this.updateDots();
 
       if (STATE.slideshow.slideInterval) {
@@ -1280,13 +1228,16 @@ const SlideshowManager = {
    * Upgrades the image quality for all images in a slide
    * @param {HTMLElement} slide - The slide element containing images to upgrade
    */
+
   upgradeSlideImageQuality(slide) {
     if (!slide) return;
 
     const images = slide.querySelectorAll("img.low-quality");
     images.forEach((img) => {
       const highQualityUrl = img.getAttribute("data-high-quality");
-      if (highQualityUrl) {
+
+      // Prevent duplicate requests if already using high quality
+      if (highQualityUrl && img.src !== highQualityUrl) {
         addThrottledRequest(highQualityUrl, () => {
           img.src = highQualityUrl;
           img.classList.remove("low-quality");
@@ -1412,35 +1363,32 @@ const SlideshowManager = {
    * Initializes keyboard event listeners
    */
   initKeyboardEvents() {
-
-
-    
     document.addEventListener("keydown", (e) => {
       if (!STATE.slideshow.containerFocused) {
         return;
       }
 
       switch (e.key) {
-        case 'ArrowRight':
-          if (focusElement.classList.contains('detail-button')) {
-            focusElement.previousElementSibling.focus(); // Move to Play Button
+        case "ArrowRight":
+          if (focusElement.classList.contains("detail-button")) {
+            focusElement.previousElementSibling.focus();
           } else {
             SlideshowManager.nextSlide();
           }
           e.preventDefault();
           break;
-          
-        case 'ArrowLeft':
-          if (focusElement.classList.contains('play-button')) {
-            focusElement.nextElementSibling.focus(); // Move to Detail Button
+
+        case "ArrowLeft":
+          if (focusElement.classList.contains("play-button")) {
+            focusElement.nextElementSibling.focus();
           } else {
             SlideshowManager.prevSlide();
           }
           e.preventDefault();
           break;
-          
-        case 'Enter':
-          focusElement.click(); // Trigger Click on Focused Button
+
+        case "Enter":
+          focusElement.click();
           e.preventDefault();
           break;
       }

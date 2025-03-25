@@ -21,7 +21,12 @@ jobs:
     - uses: actions/stale@v5
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-issue-message: 'Stale issue message'
-        stale-pr-message: 'Stale pull request message'
-        stale-issue-label: 'no-issue-activity'
-        stale-pr-label: 'no-pr-activity'
+        days-before-stale: 30  # Mark stale after 30 days of inactivity
+        days-before-close: 7   # Close 7 days after marking stale
+        stale-issue-message: 'This issue has been marked as stale due to inactivity. It will be closed in 7 days unless there is activity.'
+        stale-pr-message: 'This pull request has been marked as stale due to inactivity. It will be closed in 7 days unless there is activity.'
+        stale-issue-label: 'stale'
+        stale-pr-label: 'stale'
+        exempt-issue-labels: 'pinned,security'  # Issues with these labels won't be marked stale
+        exempt-pr-labels: 'work-in-progress'    # PRs with this label won’t be marked stale
+        remove-stale-when-updated: true  # Remove stale label if there's activity

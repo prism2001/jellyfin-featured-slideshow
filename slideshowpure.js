@@ -1,5 +1,5 @@
 /*
- * Jellyfin Slideshow by M0RPH3US v2.0.7
+ * Jellyfin Slideshow by M0RPH3US v3.0.0
  */
 
 //Core Module Configuration
@@ -14,7 +14,7 @@ const CONFIG = {
     rottenTomato:
       '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 145 140" width="20" height="18"><path fill="#0fc755" d="M47.4 35.342c-13.607-7.935-12.32-25.203 2.097-31.88 26.124-6.531 29.117 13.78 22.652 30.412-6.542 24.11 18.095 23.662 19.925 10.067 3.605-18.412 19.394-26.695 31.67-16.359 12.598 12.135 7.074 36.581-17.827 34.187-16.03-1.545-19.552 19.585.839 21.183 32.228 1.915 42.49 22.167 31.04 35.865-15.993 15.15-37.691-4.439-45.512-19.505-6.8-9.307-17.321.11-13.423 6.502 12.983 19.465 2.923 31.229-10.906 30.62-13.37-.85-20.96-9.06-13.214-29.15 3.897-12.481-8.595-15.386-16.57-5.45-11.707 19.61-28.865 13.68-33.976 4.19-3.243-7.621-2.921-25.846 24.119-23.696 16.688 4.137 11.776-12.561-.63-13.633-9.245-.443-30.501-7.304-22.86-24.54 7.34-11.056 24.958-11.768 33.348 6.293 3.037 4.232 8.361 11.042 18.037 5.033 3.51-5.197 1.21-13.9-8.809-20.135z"/></svg>',
   },
-  shuffleInterval: 8500,
+  shuffleInterval: 7000,
   retryInterval: 500,
   minSwipeDistance: 50,
   loadingCheckInterval: 100,
@@ -130,7 +130,7 @@ const initJellyfinData = (callback) => {
   try {
     const apiClient = window.ApiClient;
     STATE.jellyfinData = {
-      userId: apiClient.getCurrentUserId || "Not Found",
+      userId: apiClient.getCurrentUserId() || "Not Found",
       appName: apiClient._appName || "Not Found",
       appVersion: apiClient._appVersion || "Not Found",
       deviceName: apiClient._deviceName || "Not Found",
@@ -165,24 +165,22 @@ const initLoadingScreen = () => {
   loadingDiv.className = "bar-loading";
   loadingDiv.id = "page-loader";
   loadingDiv.innerHTML = `
-    <h1>
-      <img src="/web/assets/img/banner-light.png" 
-          alt="Server Logo" 
-          style="width: 250px; height: auto;">
-    </h1>
-    <div class="progress-container">
-      <div class="progress-bar" id="progress-bar"></div>
-      <div class="progress-gap" id="progress-gap"></div>
-      <div class="unfilled-bar" id="unfilled-bar"></div>
+    <div class="loader-content">
+      <h1>
+        <img src="/web/assets/img/banner-light.png" alt="Server Logo">
+      </h1>
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+        <div class="progress-gap" id="progress-gap"></div>
+        <div class="unfilled-bar" id="unfilled-bar"></div>
+      </div>
     </div>
   `;
   document.body.appendChild(loadingDiv);
 
-  setTimeout(() => {
-    loadingDiv.classList.add("show");
+  requestAnimationFrame(() => {
     document.querySelector(".bar-loading h1 img").style.opacity = "1";
-    document.querySelector(".progress-container").style.opacity = "1";
-  }, 100);
+  });
 
   const progressBar = document.getElementById("progress-bar");
   const unfilledBar = document.getElementById("unfilled-bar");
@@ -207,7 +205,7 @@ const initLoadingScreen = () => {
     const loginFormLoaded = document.querySelector(".manualLoginForm");
     const homePageLoaded =
       document.querySelector(".homeSectionsContainer") &&
-      document.querySelector(".slide");
+      document.querySelector("#slides-container");
 
     if (loginFormLoaded || homePageLoaded) {
       clearInterval(progressInterval);
@@ -217,18 +215,20 @@ const initLoadingScreen = () => {
       progressBar.style.width = "100%";
       unfilledBar.style.width = "0%";
 
-      setTimeout(() => {
-        const loader = document.querySelector(".bar-loading");
-        if (loader) {
-          loader.style.transition = "opacity 300ms ease-out";
-          loader.style.opacity = 0;
-          setTimeout(() => loader.remove(), 300);
-        }
-      }, 300);
+      progressBar.addEventListener('transitionend', () => {
+        requestAnimationFrame(() => {
+          const loader = document.querySelector(".bar-loading");
+          if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+              loader.remove();
+            }, 300);
+          }
+        });
+      })
     }
   }, CONFIG.loadingCheckInterval);
 };
-
 
 /**
  * Resets the slideshow state completely
@@ -540,7 +540,7 @@ const ApiUtils = {
       console.log("Fetching random items from server...");
 
       const response = await fetch(
-        `${STATE.jellyfinData.serverAddress}/Items?IncludeItemTypes=Movie,Series&Recursive=true&hasOverview=true&imageTypes=Logo,Backdrop&sortBy=Random&isPlayed=False&Limit=${CONFIG.maxItems}&Fields=Id`,
+        `${STATE.jellyfinData.serverAddress}/Items?IncludeItemTypes=Movie,Series&Recursive=true&hasOverview=true&imageTypes=Logo,Backdrop&sortBy=Random&isPlayed=False&enableUserData=true&Limit=${CONFIG.maxItems}&fields=Id`,
         {
           headers: this.getAuthHeaders(),
         }
@@ -644,6 +644,33 @@ const ApiUtils = {
       return null;
     }
   },
+
+  //Favorites
+
+  async toggleFavorite(itemId, button) {
+    try {
+      const userId = STATE.jellyfinData.userId;
+      const isFavorite = button.classList.contains("favorited");
+
+      const url = `${STATE.jellyfinData.serverAddress}/Users/${userId}/FavoriteItems/${itemId}`;
+      const method = isFavorite ? "DELETE" : "POST";
+
+      const response = await fetch(url, {
+        method,
+        headers: {
+          ...ApiUtils.getAuthHeaders(),
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to toggle favorite: ${response.statusText}`);
+      }
+      button.classList.toggle("favorited", !isFavorite);
+    } catch (error) {
+      console.error("Error toggling favorite:", error);
+    }
+  }
 };
 
 /**
@@ -764,7 +791,7 @@ const SlideCreator = {
 
     const backdrop = SlideUtils.createElement("img", {
       className: "backdrop high-quality",
-      src: `${serverAddress}/Items/${itemId}/Images/Backdrop/0`,
+      src: `${serverAddress}/Items/${itemId}/Images/Backdrop/0?quality=60`,
       alt: "Backdrop",
       loading: "eager",
     });
@@ -835,8 +862,8 @@ const SlideCreator = {
 
     const playButton = this.createPlayButton(itemId);
     const detailButton = this.createDetailButton(itemId);
-
-    buttonContainer.append(detailButton, playButton);
+    const favoriteButton = this.createFavoriteButton(item);
+    buttonContainer.append(detailButton, playButton, favoriteButton);
 
     slide.append(
       logoContainer,
@@ -945,7 +972,9 @@ const SlideCreator = {
     const ageRatingDiv = SlideUtils.createElement("div", {
       className: "age-rating",
     });
-    ageRatingDiv.innerHTML = age || "N/A";
+    const ageSpan = document.createElement("span");
+    ageSpan.textContent = age || "N/A";
+    ageRatingDiv.appendChild(ageSpan);
 
     const premiereDate = SlideUtils.createElement("div", {
       className: "date",
@@ -1019,10 +1048,7 @@ const SlideCreator = {
    */
   createDetailButton(itemId) {
     return SlideUtils.createElement("button", {
-      className: "detailButton btnPlay detail-button",
-      innerHTML: `
-      <span class="detail-text">Info</span>
-    `,
+      className: "detailButton detail-button",
       tabIndex: "0",
       onclick: (e) => {
         e.preventDefault();
@@ -1037,6 +1063,29 @@ const SlideCreator = {
       },
     });
   },
+
+  /**
+   * Creates a favorite button for an item
+   * @param {string} itemId - Item ID
+   * @returns {HTMLElement} Favorite button element
+   */
+
+  createFavoriteButton(item) {
+    const isFavorite = item.UserData && item.UserData.IsFavorite === true;
+    
+    const button = SlideUtils.createElement("button", {
+      className: `favorite-button ${isFavorite ? "favorited" : ""}`,
+      tabIndex: "0",
+      onclick: async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        await ApiUtils.toggleFavorite(item.Id, button);
+      },
+    });
+
+    return button;
+  },
+
 
   /**
    * Creates a placeholder slide for loading

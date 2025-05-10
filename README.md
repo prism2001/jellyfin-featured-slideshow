@@ -73,3 +73,14 @@ The next time it loads, it will display these items.
 Restore the `index.html` file / remove the lines added and you are good to go!!!
 
 </details>
+
+
+## License
+
+[![Custom: Non-Commercial License](https://img.shields.io/badge/license-non--commercial-red.svg)](LICENSE)
+
+This project is licensed under a custom license prohibiting any commercial use or redistribution.  
+All modifications must be contributed back to this repository.  
+Attribution to the original author (MakD) is required in any use or derivative work.
+
+Please take a look at the [LICENSE](LICENSE) file for full terms.

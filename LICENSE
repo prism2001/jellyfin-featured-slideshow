@@ -1,20 +1,24 @@
-Jellyfin-Media-Bar License
+# DON'T BE A DICK PUBLIC LICENSE
 
-Copyright (c) 2025 MakD
+[Source](https://github.com/philsturgeon/dbad)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to use, copy, modify, and contribute to the Software, provided that:
+> Version 1.2, February 2021
 
-1. Non-Commercial Use Only  
-   The Software may not be used, distributed, sublicensed, or sold for commercial purposes. Any use intended for profit or monetary gain is strictly prohibited.
+> Copyright (C) 2025 MakD
 
-2. Contribution Requirement  
-   Modifications to the Software must be submitted as contributions (e.g., via pull requests) to this repository. Forks may only be used for personal or testing purposes, and not distributed independently.
+> DON'T BE A DICK PUBLIC LICENSE
+> TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
-3. No Sublicensing  
-   The Software may not be re-licensed or distributed under any other license.
+ 1. Do whatever you like with the original work, just don't be a dick.
 
-4. Attribution  
-   You must give appropriate credit to the original author ("MakD") in any public or private use, including forks, modifications, and distributions, whether online or offline. This includes retaining this license text and clearly stating that the original work is by MakD.
+     Being a dick includes - but is not limited to - the following instances:
 
-5. Disclaimer  
-   THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+	 1a. Outright copyright infringement - Don't just copy the original work/works and change the name.  
+	 1b. Selling the unmodified original with no work done what-so-ever, that's REALLY being a dick.  
+	 1c. Modifying the original work to contain hidden harmful content. That would make you a PROPER dick.  
+
+ 2. If you become rich through modifications, related works/services, or supporting the original work, share the love. Only a dick would make loads off this work and not buy the original work's creator(s) a pint.
+ 
+ 3. Code is provided with no warranty. Using somebody else's code and bitching when it goes wrong makes you a DONKEY dick. Fix the problem yourself. A non-dick would submit the fix back or submit a [bug report](https://www.chiark.greenend.org.uk/~sgtatham/bugs.html).
+
+ 4. If you use code, calling it your own would make you a ROYAL dick. [How to cite a repo](https://academia.stackexchange.com/questions/14010/how-do-you-cite-a-github-repository). Alternatively, even just a comment giving attribution to where you found the code would be OK.

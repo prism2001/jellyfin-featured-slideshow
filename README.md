@@ -77,9 +77,10 @@ Restore the `index.html` file / remove the lines added and you are good to go!!!
 
 ## License
 
-[![Custom: Non-Commercial License](https://img.shields.io/badge/license-non--commercial-red.svg)](LICENSE)
+[![Custom: DBAD License](https://img.shields.io/badge/License-Don't_Be_A_Dick-red)](LICENSE)
 
-This project is licensed under a custom license prohibiting any commercial use or redistribution.  
+
+This project is licensed under a DBAD license prohibiting any commercial use or redistribution.  
 All modifications must be contributed back to this repository.  
 Attribution to the original author (MakD) is required in any use or derivative work.
 

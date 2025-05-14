@@ -2,7 +2,53 @@
  * Jellyfin Slideshow by M0RPH3US v3.0.0
  */
 
-@import url(https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400..700;1,400..700&display=swap);
+
+/* ------------------------------------------------------------------------
+   Subtle drop-shadow for all text in slides
+------------------------------------------------------------------------- */
+
+@keyframes scroll-vertical {
+  0%   { transform: translateY(0); }
+  10%  { transform: translateY(0); }                 /* pause at top */
+  40%  { transform: translateY(var(--scroll-amount)); } /* scroll down */
+  90%  { transform: translateY(var(--scroll-amount)); } /* pause at bottom */
+  100% { transform: translateY(0); }                 /* scroll up */
+}
+
+/* Outer wrapper (always present) */
+.marquee-vertical {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+  
+/* Inner content (animated only if needed) */
+.marquee-inner {
+  display: inline-block;
+  white-space: normal;
+  will-change: transform;
+}
+
+.slide,
+.slide * {
+  /* x-offset | y-offset | blur radius | shadow color */
+  text-shadow: 0 0px 3px rgba(0, 0, 0, 2.0);
+}
+
+.plot a {
+    color: pink;
+}
+
+a.slide .plot-container .plot {
+    white-space: normal !important;
+    word-break: break-word !important;
+    max-width: 50vw !important;
+    max-height: fit-content !important;
+    line-height: 1.4 !important;
+    line-clamp: 3 !important;
+    -webkit-line-clamp: 3 !important;
+}
 
 .backdrop.animate {
   animation: frostedGlass 1.2s cubic-bezier(0.4, 0, 0.2, 1),
@@ -313,28 +359,46 @@
 }
 
 .logo-container {
-  width: 40%;
-  height: 35%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  z-index: 5;
-  top: 15vh;
-  left: 4vw;
+    width: 40%;
+    height: 35%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    bottom: calc(50% + 1vh);
+    left: 4vw;
+}
+.slide-title {
+    position: absolute;
+    display: flex;
+    top: calc(50% - 5vh);
+    left: 4vw;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    z-index: 5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
 }
 
 .logo {
-  max-height: 70%;
-  max-width: 100%;
-  height: auto;
-  width: auto;
-  object-fit: contain;
-  filter: brightness(1.5);
+    max-height: 70%;
+    max-width: 100%;
+    position: absolute;
+    bottom: 7vh;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1.5);
 }
 
 .plot-container {
   position: absolute;
-  top: calc(50% + 8vh);
+  top: calc(50% + 6vh);
   color: #fff;
   height: 15%;
   width: 90%;
@@ -348,11 +412,22 @@
 }
 
 .plot {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
   display: -webkit-box;
   line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  color: #fff;
+}
+
+.plot a:hover,
+.plot a:active {
+  opacity: 0.8;
+  color: #fff;
 }
 
 .genre {
@@ -361,7 +436,7 @@
   left: 4vw;
   text-align: center;
   color: #fff;
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Rubik", sans-serif;
   z-index: 5;
 }
 
@@ -382,7 +457,7 @@
   justify-content: center;
   padding: 8px 16px;
   border: solid 0px rgba(255, 255, 255, 0);
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 18px;
   white-space: nowrap;
   cursor: pointer;
@@ -472,7 +547,7 @@
 }
 
 .rating-value {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Rubik", sans-serif;
   display: flex;
   align-items: center;
   z-index: 5;
@@ -480,7 +555,7 @@
 }
 
 .runTime {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Rubik", sans-serif;
   display: flex;
   align-items: center;
   margin-left: 5px;
@@ -538,7 +613,7 @@
 }
 
 .date {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -560,10 +635,72 @@
   display: none;
 }
 
+/* Style for the new pause/play button */
+#slideshow-pause-button {
+  position: absolute;
+  /* Position it near the dots */
+  top: calc(50% + 18vh);
+  right: calc(3% + 65px);
+  z-index: 6;
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  border: none;
+  border-radius: var(--theme-roundness); /* Make it circular */
+  width: 40px; /* Size */
+  height: 40px; /* Size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+#slideshow-pause-button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+}
+
+#slideshow-pause-button .material-icons {
+  font-size: 28px; /* Adjust icon size */
+}
+
+/* Rule to pause the animation when the active slide has the 'slideshow-paused' class */
+.slide.active.slideshow-paused .backdrop.animate {
+  animation-play-state: paused;
+}
+
+/* Adjust button position for landscape phones if needed */
+@media only screen and (max-height: 767px) and (orientation: landscape) {
+    #slideshow-pause-button {
+        right: calc(3% + 50px); /* Adjust horizontal position */
+        transform: scale(0.8); /* Slightly smaller */
+        top: calc(50% + 18vh); /* Keep vertical position relative */
+    }
+}
+
 /*Portrait-Modes Phone*/
 @media only screen and (max-width: 767px) and (orientation: portrait) {
+
   .plot-container {
-    display: none;
+    position: absolute;
+    display: flex;
+    left: 55%;
+    bottom: 40%;
+    width: 90vw;
+    transform: translate(-50%, -40px);
+  }
+
+  .plot {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    min-width: 80vw;
+    max-width: 100vw;
+    text-align: center;
+    text-overflow: ellipsis;
+    height: 6em;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
   }
 
   .backdrop-container {
@@ -638,7 +775,8 @@
   }
 
   .info-container {
-    top: calc(50% + 10vh);
+    position: absolute;
+    top: calc(32% + 10vh);
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
@@ -652,8 +790,8 @@
 
   .logo {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 165%;
     max-height: 60%;
     max-width: 100%;
     width: auto;
@@ -674,6 +812,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  
+  .slide-title {
+      display: none;
+  }
 }
 
 /*Landscape Mode Phones*/
@@ -688,6 +830,7 @@
 
   .button-container {
     left: 3vw;
+    top: 30vw;
     transform: scale(0.85);
   }
 
@@ -696,15 +839,18 @@
   }
 
   .info-container {
-    top: calc(50% + -10vh);
+    top: calc(50% + 5vh);
+    display: flex;
+    /*scale: 0.85;*/
   }
 
   .plot-container {
     top: calc(50% + 6vh);
+    /*transform: scale(0.95);*/
   }
 
   .genre {
-    top: calc(50% + -1vh);
+    top: calc(50% + -10vh);
   }
 
   .logo-container {
@@ -718,6 +864,66 @@
   .plot-container {
     left: 5vw;
   }
+  
+  .slide-title {
+      position: absolute;
+      display: flex;
+      top: calc(50% - 5vh);
+      left: 4vw;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      z-index: 5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 90%;
+  }
+  
+  #slideshow-pause-button {
+    right: calc(3% + 70px); /* Adjusted offset slightly due to dot scaling */
+    top: calc(50% + 20vh);
+    transform: scale(0.85);
+    left: auto;
+  }
+
+}
+
+/* Base style for the dot */
+.dot {
+  height: 8px; /* Or your current size */
+  width: 8px;  /* Or your current size */
+  margin: 0 5px;
+  background-color: #CCCCCC; /* Default dot color - A light gray */
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+
+  /* --- TRANSITION FOR ALL ANIMATED PROPERTIES --- */
+  /* Faster animation: e.g., 0.12s or 0.15s */
+  transition: transform 0.03s ease-in-out, background-color 0.03s ease-in-out;
+}
+
+/* Hover state for a non-active dot */
+.dot:hover {
+  transform: scale(1.3); /* Makes the dot 50% larger on hover */
+  background-color: #E0E0E0; /* Lighter gray for hover */
+}
+
+/* Active dot style */
+.dot.active {
+  background-color: #F0F0F0; /* Even lighter gray or near white for active */
+  transform: scale(1.7);    /* Active dot is 40% larger than default */
+  /* If you want a border on the active dot for more definition: */
+  /* border: 1px solid #999999; */
+}
+
+/* Hover state for an ACTIVE dot */
+.dot.active:hover {
+  transform: scale(1.7);    /* Slightly larger hover effect for an already active dot */
+  background-color: #FFFFFF; /* Brightest white on hover for an active dot */
 }
 
 @media only screen and (min-width: 2560px) {
@@ -728,4 +934,9 @@
   .dots-container {
     top: calc(50% + 15vh);
   }
+}
+
+
+.featured-content {
+  display: block !important;
 }

@@ -22,12 +22,12 @@ const CONFIG = {
     maxMovies: 25,
     maxTvShows: 25,
     maxItems: 500,
-    preloadCount: 4,          // pre-load x number of slides
+    preloadCount: 3,          // pre-load x number of slides
     fadeTransitionDuration: 500, // how long the fade between slides takes
     hideLogo: false,          // hides the logo from the slideshow view
     showTitle: true,          // show a plain-text title
     slideshowItems: 8,        // how many slideshow items to display on the homepage (note: the number of items in list.txt should ideally match this, but if not, it will randomly select the remainder of items from your libraries)
-    enableRandom: true,       // fill missing slots with random items
+    enableRandom: false,       // fill missing slots with random items
 };
 
 // State management

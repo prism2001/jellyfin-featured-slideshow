@@ -9,29 +9,28 @@ const CONFIG = {
             '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 575 289.83" width="33" height="32.83"><defs><path d="M575 24.91C573.44 12.15 563.97 1.98 551.91 0C499.05 0 76.18 0 23.32 0C10.11 2.17 0 14.16 0 28.61C0 51.84 0 237.64 0 260.86C0 276.86 12.37 289.83 27.64 289.83C79.63 289.83 495.6 289.83 547.59 289.83C561.65 289.83 573.26 278.82 575 264.57C575 216.64 575 48.87 575 24.91Z" id="d1pwhf9wy2"></path><path d="M69.35 58.24L114.98 58.24L114.98 233.89L69.35 233.89L69.35 58.24Z" id="g5jjnq26yS"></path><path d="M201.2 139.15C197.28 112.38 195.1 97.5 194.67 94.53C192.76 80.2 190.94 67.73 189.2 57.09C185.25 57.09 165.54 57.09 130.04 57.09L130.04 232.74L170.01 232.74L170.15 116.76L186.97 232.74L215.44 232.74L231.39 114.18L231.54 232.74L271.38 232.74L271.38 57.09L211.77 57.09L201.2 139.15Z" id="i3Prh1JpXt"></path><path d="M346.71 93.63C347.21 95.87 347.47 100.95 347.47 108.89C347.47 115.7 347.47 170.18 347.47 176.99C347.47 188.68 346.71 195.84 345.2 198.48C343.68 201.12 339.64 202.43 333.09 202.43C333.09 190.9 333.09 98.66 333.09 87.13C338.06 87.13 341.45 87.66 343.25 88.7C345.05 89.75 346.21 91.39 346.71 93.63ZM367.32 230.95C372.75 229.76 377.31 227.66 381.01 224.67C384.7 221.67 387.29 217.52 388.77 212.21C390.26 206.91 391.14 196.38 391.14 180.63C391.14 174.47 391.14 125.12 391.14 118.95C391.14 102.33 390.49 91.19 389.48 85.53C388.46 79.86 385.93 74.71 381.88 70.09C377.82 65.47 371.9 62.15 364.12 60.13C356.33 58.11 343.63 57.09 321.54 57.09C319.27 57.09 307.93 57.09 287.5 57.09L287.5 232.74L342.78 232.74C355.52 232.34 363.7 231.75 367.32 230.95Z" id="a4ov9rRGQm"></path><path d="M464.76 204.7C463.92 206.93 460.24 208.06 457.46 208.06C454.74 208.06 452.93 206.98 452.01 204.81C451.09 202.65 450.64 197.72 450.64 190C450.64 185.36 450.64 148.22 450.64 143.58C450.64 135.58 451.04 130.59 451.85 128.6C452.65 126.63 454.41 125.63 457.13 125.63C459.91 125.63 463.64 126.76 464.6 129.03C465.55 131.3 466.03 136.15 466.03 143.58C466.03 146.58 466.03 161.58 466.03 188.59C465.74 197.84 465.32 203.21 464.76 204.7ZM406.68 231.21L447.76 231.21C449.47 224.5 450.41 220.77 450.6 220.02C454.32 224.52 458.41 227.9 462.9 230.14C467.37 232.39 474.06 233.51 479.24 233.51C486.45 233.51 492.67 231.62 497.92 227.83C503.16 224.05 506.5 219.57 507.92 214.42C509.34 209.26 510.05 201.42 510.05 190.88C510.05 185.95 510.05 146.53 510.05 141.6C510.05 131 509.81 124.08 509.34 120.83C508.87 117.58 507.47 114.27 505.14 110.88C502.81 107.49 499.42 104.86 494.98 102.98C490.54 101.1 485.3 100.16 479.26 100.16C474.01 100.16 467.29 101.21 462.81 103.28C458.34 105.35 454.28 108.49 450.64 112.7C450.64 108.89 450.64 89.85 450.64 55.56L406.68 55.56L406.68 231.21Z" id="fk968BpsX"></path></defs><g><g><g><use xlink:href="#d1pwhf9wy2" opacity="1" fill="#f6c700" fill-opacity="1"></use><g><use xlink:href="#d1pwhf9wy2" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#g5jjnq26yS" opacity="1" fill="#000000" fill-opacity="1"></use><g><use xlink:href="#g5jjnq26yS" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#i3Prh1JpXt" opacity="1" fill="#000000" fill-opacity="1"></use><g><use xlink:href="#i3Prh1JpXt" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#a4ov9rRGQm" opacity="1" fill="#000000" fill-opacity="1"></use><g><use xlink:href="#a4ov9rRGQm" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g><g><use xlink:href="#fk968BpsX" opacity="1" fill="#000000" fill-opacity="1"></use><g><use xlink:href="#fk968BpsX" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use></g></g></g></g></svg>',
         tomatoLogo:
             '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 106.25 140" width="18" height="20"><path fill="#fa3106" d="M2.727 39.537c-.471-21.981 100.88-25.089 100.88-.42L92.91 117.56c-7.605 26.86-72.064 27.007-79.07.21z"/><g fill="#fff"><path d="M8.809 51.911l9.018 66.639c3.472 4.515 8.498 7.384 9.648 8.022l-6.921-68.576c-3.498-1.41-9.881-4.579-11.745-6.083zM28.629 59.776l5.453 68.898c4.926 2.652 11.04 3.391 15.73 3.566l-1.258-70.366c-3.414-.024-13.82-.642-19.925-2.098zM97.632 52.121l-9.019 66.643c-3.472 4.515-8.498 7.384-9.647 8.022l6.92-68.583c3.5-1.41 9.882-4.579 11.746-6.082zM77.812 59.986l-5.453 68.898c-4.926 2.652-11.04 3.391-15.73 3.566l1.258-70.366c3.414-.024 13.82-.642 19.925-2.098z"/></g><g fill="#ffd600"><circle cx="13.213" cy="31.252" r="6.816"/><circle cx="22.022" cy="27.687" r="6.607"/><circle cx="30.359" cy="19.769" r="5.925"/><circle cx="34.973" cy="15.155" r="6.03"/><circle cx="45.093" cy="17.095" r="4.929"/><circle cx="51.123" cy="9.597" r="6.24"/><circle cx="61.19" cy="9.387" r="6.554"/><circle cx="67.954" cy="13.635" r="4.929"/><circle cx="76.081" cy="17.672" r="5.925"/><circle cx="78.913" cy="22.706" r="4.352"/><circle cx="83.475" cy="26.324" r="5.243"/><circle cx="88.194" cy="34.398" r="5.768"/><path d="M87.355 35.447c5.79 2.799 1.352-2.213 10.696 2.097-9.574 15.338-74.774 16.892-90.291.525l-.21-3.985L38.59 16.99l22.863-6.606 15.52 9.962z"/></g></svg>',
-        freshTomato: 
+        freshTomato:
             '<svg id="svg3390" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 138.75 141.25" width="18" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><metadata id="metadata3396"><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/><dc:title/></cc:Work></rdf:RDF></metadata><g id="layer1" fill="#f93208"><path id="path3412" d="m20.154 40.829c-28.149 27.622-13.657 61.011-5.734 71.931 35.254 41.954 92.792 25.339 111.89-5.9071 4.7608-8.2027 22.554-53.467-23.976-78.009z"/><path id="path3471" d="m39.613 39.265 4.7778-8.8607 28.406-5.0384 11.119 9.2082z"/></g><g id="layer2"><path id="path3437" d="m39.436 8.5696 8.9682-5.2826 6.7569 15.479c3.7925-6.3226 13.79-16.316 24.939-4.6684-4.7281 1.2636-7.5161 3.8553-7.7397 8.4768 15.145-4.1697 31.343 3.2127 33.539 9.0911-10.951-4.314-27.695 10.377-41.771 2.334 0.009 15.045-12.617 16.636-19.902 17.076 2.077-4.996 5.591-9.994 1.474-14.987-7.618 8.171-13.874 10.668-33.17 4.668 4.876-1.679 14.843-11.39 24.448-11.425-6.775-2.467-12.29-2.087-17.814-1.475 2.917-3.961 12.149-15.197 28.625-8.476z" fill="#02902e"/></g></svg>',
-        rottenTomato: 
+        rottenTomato:
             '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 145 140" width="20" height="18"><path fill="#0fc755" d="M47.4 35.342c-13.607-7.935-12.32-25.203 2.097-31.88 26.124-6.531 29.117 13.78 22.652 30.412-6.542 24.11 18.095 23.662 19.925 10.067 3.605-18.412 19.394-26.695 31.67-16.359 12.598 12.135 7.074 36.581-17.827 34.187-16.03-1.545-19.552 19.585.839 21.183 32.228 1.915 42.49 22.167 31.04 35.865-15.993 15.15-37.691-4.439-45.512-19.505-6.8-9.307-17.321.11-13.423 6.502 12.983 19.465 2.923 31.229-10.906 30.62-13.37-.85-20.96-9.06-13.214-29.15 3.897-12.481-8.595-15.386-16.57-5.45-11.707 19.61-28.865 13.68-33.976 4.19-3.243-7.621-2.921-25.846 24.119-23.696 16.688 4.137 11.776-12.561-.63-13.633-9.245-.443-30.501-7.304-22.86-24.54 7.34-11.056 24.958-11.768 33.348 6.293 3.037 4.232 8.361 11.042 18.037 5.033 3.51-5.197 1.21-13.9-8.809-20.135z"/></svg>',
     },
-    shuffleInterval: 15000,   
+    shuffleInterval: 15000,
     retryInterval: 500,
     minSwipeDistance: 50,
     loadingCheckInterval: 100,
-    maxPlotLength: 700,       
-    maxMovies: 25,            
-    maxTvShows: 25,           
-    maxItems: 500,            
+    maxPlotLength: 700,
+    maxMovies: 25,
+    maxTvShows: 25,
+    maxItems: 500,
     preloadCount: 3,
     fadeTransitionDuration: 500,
-    hideLogo: false,          
-    showTitle: true,          
-    slideshowItems: 8,        
-    enableRandom: false,       
-    slideAnimationEnabled: true, 
+    hideLogo: false,
+    showTitle: true,
+    slideshowItems: 8,
+    enableRandom: false,
+    slideAnimationEnabled: true,
 };
 
-// State management
 const STATE = {
     jellyfinData: {
         userId: null,
@@ -41,12 +40,12 @@ const STATE = {
         deviceId: null,
         accessToken: null,
         serverAddress: null,
-        serverId: null, // Added serverId for consistency
+        serverId: null,
     },
     slideshow: {
         hasInitialized: false,
         isTransitioning: false,
-        isPaused: false, 
+        isPaused: false,
         currentSlideIndex: 0,
         focusedSlide: null,
         containerFocused: false,
@@ -59,7 +58,6 @@ const STATE = {
     },
 };
 
-// Request throttling system - 
 const requestQueue = [];
 let isProcessingQueue = false;
 
@@ -142,10 +140,9 @@ const initJellyfinData = (callback) => {
             deviceName: apiClient._deviceName || "Not Found",
             deviceId: apiClient._deviceId || "Not Found",
             accessToken: apiClient._serverInfo.AccessToken || "Not Found",
-            serverId: apiClient._serverInfo.Id || "Not Found", // Ensure serverId is captured
+            serverId: apiClient._serverInfo.Id || "Not Found",
             serverAddress: apiClient._serverAddress || "Not Found",
         };
-        // Basic validation
         if (STATE.jellyfinData.userId === "Not Found" || STATE.jellyfinData.accessToken === "Not Found") {
              throw new Error("User ID or Access Token not found in ApiClient.");
         }
@@ -156,7 +153,7 @@ const initJellyfinData = (callback) => {
     } catch (error) {
         console.error("Error initializing Jellyfin data:", error);
         // Retry with backoff or limit retries if needed
-        setTimeout(() => initJellyfinData(callback), CONFIG.retryInterval * 2); // Increase retry delay slightly
+        setTimeout(() => initJellyfinData(callback), CONFIG.retryInterval * 2);
     }
 };
 
@@ -164,7 +161,7 @@ const initJellyfinData = (callback) => {
  * Creates and displays loading screen
  */
 const initLoadingScreen = () => {
-     check for homepage based on hash
+    // Keep custom check for homepage based on hash
     const isHomePage = window.location.hash === '#/home.html' || window.location.hash === '#/home';
 
     if (!isHomePage) return;
@@ -173,7 +170,6 @@ const initLoadingScreen = () => {
     const loadingDiv = document.createElement("div");
     loadingDiv.className = "bar-loading";
     loadingDiv.id = "page-loader";
-    // Use custom H1 with IMG tag
     loadingDiv.innerHTML = `
       <div class="loader-content">
         <h1>
@@ -188,13 +184,12 @@ const initLoadingScreen = () => {
     `;
     document.body.appendChild(loadingDiv);
 
-    // Fade in logo
     requestAnimationFrame(() => {
         const img = loadingDiv.querySelector("h1 img");
         if(img) img.style.opacity = "1";
     });
 
-     progress bar logic
+    // Keep custom progress bar logic
     const progressBar = document.getElementById("progress-bar");
     const unfilledBar = document.getElementById("unfilled-bar");
     let progress = 0;
@@ -213,17 +208,15 @@ const initLoadingScreen = () => {
         }
     }, 150);
 
-     check logic for hiding loader
+    // Keep custom check logic for hiding loader
     const checkInterval = setInterval(() => {
         const loginFormLoaded = document.querySelector(".manualLoginForm");
-        // Refined check for home page content
         const homePageLoaded = document.querySelector(".homeSectionsContainer") && document.getElementById('slides-container');
 
         if (loginFormLoaded || homePageLoaded) {
             clearInterval(progressInterval);
             clearInterval(checkInterval);
 
-            // Animate progress to 100%
             if(progressBar) {
                 progressBar.style.transition = "width 300ms ease-in-out";
                 progressBar.style.width = "100%";
@@ -240,7 +233,7 @@ const initLoadingScreen = () => {
                     loader.style.opacity = '0';
                     loader.addEventListener('transitionend', () => loader.remove(), { once: true });
                 }
-            }, 350); // Delay slightly longer than progress animation
+            }, 350);
         }
     }, CONFIG.loadingCheckInterval);
 };
@@ -251,16 +244,15 @@ const initLoadingScreen = () => {
 const resetSlideshowState = () => {
     console.log("🔄 Resetting slideshow state...");
 
-    STATE.slideshow.slideInterval?.stop(); // Use optional chaining and stop method
+    STATE.slideshow.slideInterval?.stop();
     STATE.slideshow.slideInterval = null;
 
     const container = document.getElementById("slides-container");
     if (container) {
-        container.innerHTML = ''; // Clear content
+        container.innerHTML = '';
         // Consider removing event listeners added directly to container if any
     }
 
-    // Reset state properties including isPaused
     Object.assign(STATE.slideshow, {
         hasInitialized: false,
         isTransitioning: false,
@@ -281,7 +273,7 @@ const resetSlideshowState = () => {
  * Watches for login status changes
  */
 const startLoginStatusWatcher = () => {
-    let wasLoggedIn = isUserLoggedIn(); // Check initial state
+    let wasLoggedIn = isUserLoggedIn();
 
     const checkLogin = () => {
         const isLoggedIn = isUserLoggedIn();
@@ -289,25 +281,22 @@ const startLoginStatusWatcher = () => {
             console.log(`User login status changed: ${wasLoggedIn ? 'Logged Out' : 'Logged In'}`);
             if (isLoggedIn) {
                 console.log("👤 User logged in. Checking slideshow initialization...");
-                // Initialize only if not already initialized
                 if (!STATE.slideshow.hasInitialized) {
-                    waitForApiClientAndInitialize(); // Trigger full init sequence
+                    waitForApiClientAndInitialize();
                 } else {
                     console.log("🔄 Slideshow already initialized. State:", STATE.slideshow);
                     // Optionally refresh data if needed on re-login
-                    // SlideshowManager.loadSlideshowData();
                 }
             } else {
                 console.log("👋 User logged out. Resetting slideshow...");
-                resetSlideshowState(); // Reset state on logout
+                resetSlideshowState();
             }
             wasLoggedIn = isLoggedIn;
         }
     };
 
-    // Check immediately and then set interval
     checkLogin();
-    setInterval(checkLogin, 2000); // Keep interval
+    setInterval(checkLogin, 2000);
 };
 
 /**
@@ -326,7 +315,7 @@ const waitForApiClientAndInitialize = () => {
             return false;
         }
 
-        if (isUserLoggedIn()) { // Use the refined login check
+        if (isUserLoggedIn()) {
             console.log("🔓 User is logged in. Proceeding...");
             clearInterval(window.slideshowCheckInterval);
             window.slideshowCheckInterval = null;
@@ -341,14 +330,14 @@ const waitForApiClientAndInitialize = () => {
             } else {
                 console.log("🔄 Slideshow already initialized, skipping init call.");
             }
-            return true; // Stop interval
+            return true;
         } else {
             console.log("🔒 Authentication incomplete or ApiClient not fully ready...");
-            return false; // Continue interval
+            return false;
         }
     };
 
-    if (!checkApiClient()) { // Initial check
+    if (!checkApiClient()) {
         window.slideshowCheckInterval = setInterval(checkApiClient, CONFIG.retryInterval);
     }
 };
@@ -356,7 +345,7 @@ const waitForApiClientAndInitialize = () => {
 /**
  * Utility functions for slide creation and management
  */
-const SlideUtils = { // Keep combined utils from previous merge
+const SlideUtils = {
     shuffleArray(array) {
         const newArray = [...array];
         for (let i = newArray.length - 1; i > 0; i--) {
@@ -426,22 +415,19 @@ const SlideUtils = { // Keep combined utils from previous merge
             if (homeSections) {
                 console.log(`✅ [getOrCreateSlidesContainer] Found .homeSectionsContainer. Inserting #slides-container before it.`);
                 try {
-                    // *** Perform the insertion ***
                     homeTab.insertBefore(container, homeSections);
 
-                    // *** IMMEDIATE CONFIRMATION ***
                     const insertedElement = homeTab.querySelector('#slides-container');
                     if (insertedElement && insertedElement === container) {
                         console.log(`✅ [getOrCreateSlidesContainer] CONFIRMED Inserted successfully. New parent:`, container.parentElement?.id);
                     } else {
                         console.error(`❌ [getOrCreateSlidesContainer] FAILED INSERTION CHECK! Element not found immediately after insertBefore.`);
-                        // Fallback attempt
                         homeTab.appendChild(container);
                         console.warn("⚠️ [getOrCreateSlidesContainer] insertBefore failed check, fell back to appendChild within #homeTab.");
                     }
                 } catch (e) {
                      console.error("❌ [getOrCreateSlidesContainer] Error during insertBefore:", e);
-                     homeTab.appendChild(container); // Fallback
+                     homeTab.appendChild(container);
                      console.warn("⚠️ [getOrCreateSlidesContainer] insertBefore threw error, fell back to appendChild within #homeTab.");
                 }
             } else {
@@ -474,12 +460,12 @@ const SlideUtils = { // Keep combined utils from previous merge
 /**
  * API utilities for fetching data from Jellyfin server
  */
-const ApiUtils = { // Keep combined utils from previous merge
+const ApiUtils = {
     async fetchItemDetails(itemId) {
         if (STATE.slideshow.loadedItems[itemId]) {
             return STATE.slideshow.loadedItems[itemId];
         }
-        const url = `${STATE.jellyfinData.serverAddress}/Users/${STATE.jellyfinData.userId}/Items/${itemId}?fields=Overview,Genres,OfficialRating,CommunityRating,CriticRating,PremiereDate,RunTimeTicks,ChildCount,UserData,ProductionYear`; // Added userId and ProductionYear
+        const url = `${STATE.jellyfinData.serverAddress}/Users/${STATE.jellyfinData.userId}/Items/${itemId}?fields=Overview,Genres,OfficialRating,CommunityRating,CriticRating,PremiereDate,RunTimeTicks,ChildCount,UserData,ProductionYear`;
         try {
             const response = await fetch(url, { headers: this.getAuthHeaders() });
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
@@ -501,8 +487,8 @@ const ApiUtils = { // Keep combined utils from previous merge
                  return [];
             }
             const text = await response.text();
-             logic potentially skipping first line if that was intended
-            const ids = text.split("\n").map(id => id.trim()).filter(id => id); //.slice(1);
+            // Keep custom logic potentially skipping first line if that was intended
+            const ids = text.split("\n").map(id => id.trim()).filter(id => id);
             console.log(`Fetched ${ids.length} IDs from list.txt.`);
             return ids;
         } catch (error) {
@@ -536,7 +522,7 @@ const ApiUtils = { // Keep combined utils from previous merge
     },
     async playItem(itemId) {
         try {
-            const sessionId = await this.getSessionId(); // Re-fetch session ID
+            const sessionId = await this.getSessionId();
             if (!sessionId) throw new Error("Could not get session ID.");
             const playUrl = `${STATE.jellyfinData.serverAddress}/Sessions/${sessionId}/Playing?playCommand=PlayNow&itemIds=${itemId}&userId=${STATE.jellyfinData.userId}`;
             const response = await fetch(playUrl, { method: "POST", headers: this.getAuthHeaders(), body: '{}' });
@@ -568,7 +554,7 @@ const ApiUtils = { // Keep combined utils from previous merge
             return null;
         }
     },
-    async toggleFavorite(itemId, button) {  logic
+    async toggleFavorite(itemId, button) {
         if (!STATE.jellyfinData.userId || !itemId) return;
         const userId = STATE.jellyfinData.userId;
         const isCurrentlyFavorite = button.classList.contains("favorited");
@@ -586,7 +572,7 @@ const ApiUtils = { // Keep combined utils from previous merge
 };
 
 /**
- * Class for managing slide timing - Keep refined timer from previous merge
+ * Class for managing slide timing
  */
 class SlideTimer {
     constructor(callback, interval) {
@@ -599,20 +585,20 @@ class SlideTimer {
     }
     stop() {
         if (this.timerId) {
-            clearTimeout(this.timerId); // Use clearTimeout for combined logic
-            clearInterval(this.timerId); // Also clear interval just in case
+            clearTimeout(this.timerId);
+            clearInterval(this.timerId);
             this.timerId = null;
         }
-        this.paused = true; // Mark as paused explicitly
+        this.paused = true;
         // Don't reset remaining here, pause should preserve it
         return this;
     }
     pause() {
         if (this.timerId && !this.paused) {
-            clearTimeout(this.timerId); // Use clearTimeout
+            clearTimeout(this.timerId);
             clearInterval(this.timerId);
             this.timerId = null;
-            this.remaining -= Date.now() - this.startTime; // Calculate remaining
+            this.remaining -= Date.now() - this.startTime;
             this.paused = true;
         }
         return this;
@@ -622,22 +608,20 @@ class SlideTimer {
         this.paused = false;
         this.startTime = Date.now();
 
-        // If resuming with remaining time
         if (this.remaining < this.interval && this.remaining > 0) {
             this.timerId = setTimeout(() => {
                 this.callback();
-                this.remaining = this.interval; // Reset for next full interval
-                this.start(); // Call start again to set up the interval
+                this.remaining = this.interval;
+                this.start();
             }, this.remaining);
         } else {
-            // Start a fresh interval
-            this.remaining = this.interval; // Ensure remaining is set to full duration
+            this.remaining = this.interval;
             this.timerId = setInterval(this.callback, this.interval);
         }
         return this;
     }
     restart() {
-        return this.stop().start(); // Full stop and start
+        return this.stop().start();
     }
 }
 
@@ -675,12 +659,11 @@ const VisibilityObserver = {
         const homeTabButton = document.querySelector('.skinHeader .emby-tab-button[data-index="0"]');
         const homeTabActive = homeTabButton?.classList.contains('emby-tab-button-active') ?? false;
 
-        const shouldBeVisible = isOnHomePage && homeTabActive; // Simplified check now that we know container is in homeTab
+        const shouldBeVisible = isOnHomePage && homeTabActive;
 
         container.style.display = shouldBeVisible ? "block" : "none";
         console.log(`[updateVisibility] isOnHome: ${isOnHomePage}, homeTabActive: ${homeTabActive}. Setting display: ${container.style.display}`);
 
-        // Pause/Resume Timer Logic
         if (STATE.slideshow.slideInterval) {
             if (shouldBeVisible && !STATE.slideshow.isPaused) {
                 if (STATE.slideshow.slideInterval.paused) {
@@ -696,7 +679,6 @@ const VisibilityObserver = {
         }
     },
 
-    // Handles the core logic on DOM changes
     _handleMutation() {
         this.updateVisibility();
 
@@ -709,7 +691,7 @@ const VisibilityObserver = {
                 this._reinitTimeoutId = null;
                 console.log("[_handleMutation] Navigated away or #homeTab missing, cleared pending re-init.");
             }
-            this._stopRemovalCheckObserver(); // Stop removal check when navigating away
+            this._stopRemovalCheckObserver();
             return;
         }
 
@@ -719,21 +701,18 @@ const VisibilityObserver = {
 
         console.log(`[_handleMutation Check] isOnHome: ${isOnHomePage}, homeTabExists: ${homeTabExists}, homeSectionsInTab: ${homeSectionsExistInHomeTab}, containerInHomeTab: ${containerExistsInHomeTab}, wasInitialized: ${wasInitialized}`);
 
-        // --- Cleanup Orphaned Container ---
         const globalContainer = document.getElementById("slides-container");
         if (globalContainer && !containerExistsInHomeTab) {
             console.warn("[_handleMutation Cleanup] Found orphaned #slides-container outside #homeTab. Removing it.");
             globalContainer.remove();
-            // Allow re-init logic below to run now that orphan is gone
         }
 
-        // --- Re-initialization Logic ---
         if (isOnHomePage && homeSectionsExistInHomeTab && !containerExistsInHomeTab && !this._reinitTimeoutId && wasInitialized) {
              // We check wasInitialized here to ensure we only try to *re*-init automatically.
              // Initial init is handled by startLoginStatusWatcher -> waitForApiClientAndInitialize -> slidesInit
             console.warn("[_handleMutation] Condition met for re-init (container missing in homeTab). Scheduling timeout...");
 
-            STATE.slideshow.hasInitialized = false; // Prevent multiple triggers immediately
+            STATE.slideshow.hasInitialized = false;
 
             this._reinitTimeoutId = setTimeout(() => {
                 console.log("[Re-init Timeout] Executing delayed re-initialization...");
@@ -745,18 +724,16 @@ const VisibilityObserver = {
 
                 if (stillOnHomePage && homeSectionsNowExist && containerStillMissing) {
                     console.log("[Re-init Timeout] Conditions still valid. Calling reset/init.");
-                    resetSlideshowState(); // Sets hasInitialized=false
-                    slidesInit(); // Sets hasInitialized=true on success
-                    // Start removal check AFTER successful re-init
+                    resetSlideshowState();
+                    slidesInit();
                     if (STATE.slideshow.hasInitialized) {
                          this._startRemovalCheckObserver();
                     }
                 } else {
                     console.warn("[Re-init Timeout] Aborted: Conditions changed.");
-                     // Ensure state is false if we aborted
                      if (STATE.slideshow.hasInitialized) { STATE.slideshow.hasInitialized = false; }
                 }
-            }, 250); // Increased delay slightly to 250ms
+            }, 250);
 
         } else if (isOnHomePage && !homeSectionsExistInHomeTab && !containerExistsInHomeTab && wasInitialized) {
              console.log("[_handleMutation] On home page, container missing, homeSectionsContainer not ready yet. Waiting.");
@@ -766,9 +743,8 @@ const VisibilityObserver = {
         }
     },
 
-    // --- Observer specifically for checking removal ---
     _startRemovalCheckObserver() {
-        if (this._removalCheckObserver) return; // Already running
+        if (this._removalCheckObserver) return;
 
         const homeTab = document.getElementById('homeTab');
         if (!homeTab) return;
@@ -780,12 +756,11 @@ const VisibilityObserver = {
                     mutation.removedNodes.forEach(node => {
                         if (node.id === 'slides-container') {
                             console.error("!!! [_removalCheckObserver] #slides-container was REMOVED from #homeTab externally after being added!");
-                            this._stopRemovalCheckObserver(); // Stop observing once removed
+                            this._stopRemovalCheckObserver();
 
                             // Ensure state reflects removal so main observer can trigger re-init again if needed
                             if (STATE.slideshow.hasInitialized) {
                                 console.warn("[_removalCheckObserver] Resetting hasInitialized state due to container removal.");
-                                // Directly calling reset might interfere with other things,
                                 // just setting the flag allows the main observer loop to handle it.
                                 STATE.slideshow.hasInitialized = false;
                             }
@@ -810,7 +785,6 @@ const VisibilityObserver = {
         }
     },
 
-    // --- Main Initialization and Cleanup ---
     init() {
         if (this._observer) {
             console.log("[VisibilityObserver.init] Disconnecting existing observers.");
@@ -824,7 +798,7 @@ const VisibilityObserver = {
                  this._reinitTimeoutId = null;
                  console.log("[hashchange] Cleared pending re-init due to navigation.");
              }
-             this._stopRemovalCheckObserver(); // Stop removal check on navigation
+             this._stopRemovalCheckObserver();
              setTimeout(() => this.updateVisibility(), 50);
         };
 
@@ -852,7 +826,7 @@ const VisibilityObserver = {
     },
 
      disconnect() {
-          this._stopRemovalCheckObserver(); // Stop removal check first
+          this._stopRemovalCheckObserver();
           if (this._observer) {
               this._observer.disconnect();
               this._observer = null;
@@ -900,17 +874,18 @@ const SlideCreator = {
 
         let titleElement = null;
         if (CONFIG.showTitle) { // Use custom showTitle flag
-            titleElement = SlideUtils.createElement("h2", { className: "slide-title" }, name); // Use item.Name
+            titleElement = SlideUtils.createElement("h2", { className: "slide-title" }, name);
         }
 
         const featuredContent = SlideUtils.createElement("div", { className: "featured-content" }, item.Type === "Movie" ? "Movie" : "TV Show");
 
+        // Keep custom plot logic with Marked/DOMPurify and marquee
         const rawOverview = item.Overview || "No overview available";
         const sanitizedOverview = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(rawOverview) : rawOverview;
         const htmlOverview = typeof marked !== 'undefined' ? marked.parse(sanitizedOverview) : `<p>${sanitizedOverview}</p>`;
         const plotElement = SlideUtils.createElement("div", { className: "plot" });
         plotElement.innerHTML = `<div class="marquee-vertical"><div class="marquee-inner">${htmlOverview}</div></div>`;
-        setTimeout(() => {
+        setTimeout(() => { // Keep custom marquee animation logic
             const inner = plotElement.querySelector(".marquee-inner");
             const container = plotElement;
              if (!inner || !container) return;
@@ -947,9 +922,8 @@ const SlideCreator = {
     },
     createRatingInfo(item) {
          const { CommunityRating: rating, CriticRating: criticRating, OfficialRating: age, PremiereDate: date, RunTimeTicks: runtime, ChildCount: season, ProductionYear } = item;
-        const ratingContainer = SlideUtils.createElement("div", { className: "rating-value" }); // Main container
+        const ratingContainer = SlideUtils.createElement("div", { className: "rating-value" });
 
-        // IMDB
         const imdbLogoDiv = SlideUtils.createElement("div", { className: "imdb-logo", innerHTML: CONFIG.IMAGE_SVG.imdbLogo, style: { width: "30px", height: "30px" }});
         ratingContainer.appendChild(imdbLogoDiv);
         const ratingSpan = SlideUtils.createElement("span", { style: { marginRight: "5px", marginLeft: "5px" } });
@@ -958,7 +932,6 @@ const SlideCreator = {
         ratingContainer.appendChild(ratingSpan);
         ratingContainer.appendChild(SlideUtils.createSeparator());
 
-        // Tomato
         const tomatoRatingDiv = SlideUtils.createElement("div", { className: "tomato-rating" });
         const tomatoLogoDiv = SlideUtils.createElement("div", { className: "tomato-logo", innerHTML: CONFIG.IMAGE_SVG.tomatoLogo, style: { width: "18px", height: "20px" } });
         tomatoRatingDiv.appendChild(tomatoLogoDiv);
@@ -966,14 +939,13 @@ const SlideCreator = {
         if (typeof criticRating === "number") valueElement.textContent = `${criticRating}% `;
         else { valueElement.style.color = "rgba(255, 255, 255, 0.6)"; valueElement.textContent = "N/A "; }
         tomatoRatingDiv.appendChild(valueElement);
-        const criticLogoSpan = SlideUtils.createElement("span", { className: "critic-logo", style: { display: "flex"} }); // Removed fixed size
+        const criticLogoSpan = SlideUtils.createElement("span", { className: "critic-logo", style: { display: "flex"} });
         if (typeof criticRating === "number") criticLogoSpan.innerHTML = criticRating >= 60 ? CONFIG.IMAGE_SVG.freshTomato : CONFIG.IMAGE_SVG.rottenTomato;
         else criticLogoSpan.style.display = 'none';
         tomatoRatingDiv.appendChild(criticLogoSpan);
         ratingContainer.appendChild(tomatoRatingDiv);
         ratingContainer.appendChild(SlideUtils.createSeparator());
 
-         // Year
          const premiereDateDiv = SlideUtils.createElement("div", { className: "date" });
          let year = NaN;
          if (date) { try { year = new Date(date).getFullYear(); } catch (e) {} }
@@ -983,14 +955,12 @@ const SlideCreator = {
          ratingContainer.appendChild(premiereDateDiv);
          ratingContainer.appendChild(SlideUtils.createSeparator());
 
-        // Age Rating
         const ageRatingDiv = SlideUtils.createElement("div", { className: "age-rating" });
         const ageSpan = SlideUtils.createElement("span", {}, age || "N/A");
         ageRatingDiv.appendChild(ageSpan);
         ratingContainer.appendChild(ageRatingDiv);
         ratingContainer.appendChild(SlideUtils.createSeparator());
 
-        // Runtime/Seasons
         const runTimeElement = SlideUtils.createElement("div", { className: "runTime" });
         if (item.Type === "Series" && typeof season === 'number' && season >= 0) runTimeElement.textContent = `${season} Season${season !== 1 ? "s" : ""}`;
         else if (item.Type === "Movie" && runtime && runtime > 0) {
@@ -1000,7 +970,7 @@ const SlideCreator = {
                  let durationString = '';
                  if (hours > 0) durationString += `${hours}h `;
                  if (remainingMinutes > 0) durationString += `${remainingMinutes}m`;
-                 runTimeElement.textContent = durationString.trim() || 'N/A'; // Handle 0 min case
+                 runTimeElement.textContent = durationString.trim() || 'N/A';
             } else runTimeElement.textContent = "N/A";
         } else runTimeElement.textContent = "N/A";
         ratingContainer.appendChild(runTimeElement);
@@ -1008,43 +978,35 @@ const SlideCreator = {
         // Simple separator visibility (hide last one)
         const separators = ratingContainer.querySelectorAll('.separator-icon');
         if (separators.length > 0) {
-            // Logic to hide separators if their preceding element is hidden by CSS (using display variable)
+            // Logic to hide separators if their preceding element is hidden by CSS
             separators.forEach(sep => {
                 const prev = sep.previousElementSibling;
                 // Check computed style to respect CSS rules
                 if (prev && getComputedStyle(prev).display === 'none') {
                     sep.style.display = 'none';
                 } else {
-                     sep.style.display = ''; // Ensure it's visible otherwise
+                     sep.style.display = '';
                 }
             });
-             // Hide the very last separator always
              separators[separators.length - 1].style.display = 'none';
         }
 
 
         return ratingContainer;
     },
-    createPlayButton(itemId) { 
+    createPlayButton(itemId) {
         return SlideUtils.createElement("button", { className: "detailButton btnPlay play-button", tabIndex: "0", onclick: (e) => { e.preventDefault(); e.stopPropagation(); ApiUtils.playItem(itemId); }, innerHTML: `<span class="play-text">Play</span>` });
     },
     createDetailButton(itemId) {
         return SlideUtils.createElement("button", { className: "detailButton detail-button", tabIndex: "0", onclick: (e) => { e.preventDefault(); e.stopPropagation(); window.location.hash = `#/details?id=${itemId}&serverId=${STATE.jellyfinData.serverId}`; } });
     },
-    createFavoriteButton(item) { 
+    createFavoriteButton(item) {
         const isFavorite = item.UserData?.IsFavorite === true;
         const button = SlideUtils.createElement("button", { className: `favorite-button ${isFavorite ? "favorited" : ""}`, tabIndex: "0", onclick: async (e) => { e.preventDefault(); e.stopPropagation(); await ApiUtils.toggleFavorite(item.Id, button); } });
         return button;
     },
-    createLoadingPlaceholder(itemId) { 
+    createLoadingPlaceholder(itemId) {
         const placeholder = SlideUtils.createElement("a", { className: "slide placeholder", "data-item-id": itemId, style: { display: 'block', opacity: "0", transition: `opacity ${CONFIG.fadeTransitionDuration}ms ease-in-out`, minHeight: '50vh', backgroundColor: 'rgba(0,0,0,0.2)' } });
-
-        console.log(`[createLoadingPlaceholder] About to call createLoadingIndicator for item ${itemId}.`);
-        console.log("[createLoadingPlaceholder] Current value of SlideUtils:", SlideUtils);
-        console.log("[createLoadingPlaceholder] Type of SlideUtils:", typeof SlideUtils);
-        if (SlideUtils) {
-             console.log("[createLoadingPlaceholder] Type of SlideUtils.createLoadingIndicator:", typeof SlideUtils.createLoadingIndicator);
-        }
 
         try {
             placeholder.appendChild(SlideUtils.createLoadingIndicator());
@@ -1058,7 +1020,7 @@ const SlideCreator = {
         }
         return placeholder;
     },
-    async createSlideForItemId(itemId) { 
+    async createSlideForItemId(itemId) {
         let slideElement = document.querySelector(`.slide[data-item-id="${itemId}"]:not(.placeholder)`);
         if (slideElement) return slideElement;
         const container = SlideUtils.getOrCreateSlidesContainer();
@@ -1067,7 +1029,7 @@ const SlideCreator = {
         try {
             const item = await ApiUtils.fetchItemDetails(itemId);
             if (!item) throw new Error("No details found");
-            const newSlideElement = this.createSlideElement(item, item.Name); // Pass item.Name
+            const newSlideElement = this.createSlideElement(item, item.Name);
             if (!newSlideElement) throw new Error("createSlideElement returned null");
             if (container.contains(placeholder)) container.replaceChild(newSlideElement, placeholder);
             else container.appendChild(newSlideElement);
@@ -1085,7 +1047,7 @@ const SlideCreator = {
  * Manages slideshow functionality
  */
 const SlideshowManager = {
-    createPaginationDots() {  logic based on slideshowItems
+    createPaginationDots() { // Keep custom logic based on slideshowItems
         const container = SlideUtils.getOrCreateSlidesContainer();
         let dotsContainer = container.querySelector(".dots-container");
         if (!dotsContainer) { dotsContainer = SlideUtils.createElement("div", { className: "dots-container" }); container.appendChild(dotsContainer); }
@@ -1098,7 +1060,7 @@ const SlideshowManager = {
         }
         this.updateDots();
     },
-    updateDots() {  logic
+    updateDots() { // Keep custom logic
         const container = SlideUtils.getOrCreateSlidesContainer();
         const dots = container.querySelectorAll(".dots-container .dot");
         if (!dots || dots.length === 0) return;
@@ -1109,7 +1071,7 @@ const SlideshowManager = {
         const activeDotIndex = currentIndex % numDots;
         dots.forEach((dot, index) => dot.classList.toggle("active", index === activeDotIndex));
     },
-    async updateCurrentSlide(index) {  logic
+    async updateCurrentSlide(index) {
         if (STATE.slideshow.isTransitioning || STATE.slideshow.totalItems === 0) return;
         STATE.slideshow.isTransitioning = true;
         const totalItems = STATE.slideshow.totalItems;
@@ -1129,7 +1091,7 @@ const SlideshowManager = {
         const previousSlide = container.querySelector(".slide.active");
         if (previousSlide && previousSlide !== nextSlide) {
             previousSlide.classList.remove("active");
-             if (CONFIG.slideAnimationEnabled) { // Check config flag
+             if (CONFIG.slideAnimationEnabled) {
                  previousSlide.querySelector(".backdrop")?.classList.remove("animate");
                  previousSlide.querySelector(".logo")?.classList.remove("animate");
              }
@@ -1140,7 +1102,7 @@ const SlideshowManager = {
         else nextSlide.classList.remove('slideshow-paused');
         void nextSlide.offsetWidth; // Reflow
         nextSlide.style.opacity = '1';
-        if (CONFIG.slideAnimationEnabled) { // Check config flag
+        if (CONFIG.slideAnimationEnabled) {
              nextSlide.querySelector(".backdrop")?.classList.add("animate");
              nextSlide.querySelector(".logo")?.classList.add("animate");
          }
@@ -1148,13 +1110,13 @@ const SlideshowManager = {
         this.updateDots();
         this.preloadAdjacentSlides(index);
         if (STATE.slideshow.slideInterval && !STATE.slideshow.isPaused) STATE.slideshow.slideInterval.restart();
-        setTimeout(() => { STATE.slideshow.isTransitioning = false; /* Prune less often? */ }, CONFIG.fadeTransitionDuration);
+        setTimeout(() => { STATE.slideshow.isTransitioning = false; }, CONFIG.fadeTransitionDuration);
     },
     upgradeSlideImageQuality(slide) {
          if (!slide) return;
          const images = slide.querySelectorAll("img[data-high-quality]");
          images.forEach((img) => {
-              if (img.classList.contains('low-quality')) { /* Only if loading LQ first */
+              if (img.classList.contains('low-quality')) { // Only if loading LQ first
                    const highQualityUrl = img.getAttribute("data-high-quality");
                    if (highQualityUrl && img.src !== highQualityUrl) {
                         addThrottledRequest(highQualityUrl, () => { img.src = highQualityUrl; img.classList.remove("low-quality"); img.classList.add("high-quality"); });
@@ -1162,7 +1124,7 @@ const SlideshowManager = {
               } else img.classList.add('high-quality');
          });
     },
-    async preloadAdjacentSlides(currentIndex) { 
+    async preloadAdjacentSlides(currentIndex) {
         if (STATE.slideshow.totalItems <= 1) return;
         const totalItems = STATE.slideshow.totalItems;
         const preloadCount = Math.min(CONFIG.preloadCount, Math.floor(totalItems / 2));
@@ -1180,17 +1142,17 @@ const SlideshowManager = {
         await Promise.all(preloadPromises);
         console.log("Preloading finished.");
     },
-    nextSlide() {  logic (handles unpausing)
+    nextSlide() { // Keep custom logic (handles unpausing)
         const nextIndex = (STATE.slideshow.currentSlideIndex + 1) % STATE.slideshow.totalItems;
         this.updateCurrentSlide(nextIndex);
         if (STATE.slideshow.isPaused) document.getElementById("slideshow-pause-button")?.click();
     },
-    prevSlide() {  logic (handles unpausing)
+    prevSlide() { // Keep custom logic (handles unpausing)
         const prevIndex = (STATE.slideshow.currentSlideIndex - 1 + STATE.slideshow.totalItems) % STATE.slideshow.totalItems;
         this.updateCurrentSlide(prevIndex);
         if (STATE.slideshow.isPaused) document.getElementById("slideshow-pause-button")?.click();
     },
-    pruneSlideCache() { 
+    pruneSlideCache() {
         const currentIndex = STATE.slideshow.currentSlideIndex; const totalItems = STATE.slideshow.totalItems; const keepRange = 5;
         if (totalItems <= (keepRange * 2 + 1)) return; // Don't prune if too few items
         const minKeepIndex = (currentIndex - keepRange + totalItems) % totalItems; const maxKeepIndex = (currentIndex + keepRange) % totalItems;
@@ -1216,7 +1178,7 @@ const SlideshowManager = {
         const diff = endX - startX; if (Math.abs(diff) < CONFIG.minSwipeDistance) return;
         if (diff > 0) this.prevSlide(); else this.nextSlide();
     },
-    initKeyboardEvents() {  (adds Spacebar)
+    initKeyboardEvents() {
         document.addEventListener("keydown", (e) => {
             const container = document.getElementById('slides-container');
             if (!container || container.style.display === 'none') return;
@@ -1230,7 +1192,7 @@ const SlideshowManager = {
             }
         });
     },
-    async loadSlideshowData() {  logic
+    async loadSlideshowData() { // Keep custom logic
         try {
             STATE.slideshow.isLoading = true; const neededCount = CONFIG.slideshowItems; let finalItemIds = [];
             console.log(`Loading slideshow data. Target items: ${neededCount}`);
@@ -1262,7 +1224,7 @@ const SlideshowManager = {
                       STATE.slideshow.slideInterval = new SlideTimer(() => { if (!STATE.slideshow.isPaused) this.nextSlide(); }, CONFIG.shuffleInterval);
                       // Let VisibilityObserver start it initially
                  } else {
-                     // If interval exists but wasn't running (e.g., re-init after logout/login)
+                     // If interval exists but wasn't running
                      if (!STATE.slideshow.slideInterval.timerId && !STATE.slideshow.isPaused) {
                           STATE.slideshow.slideInterval.start();
                      }
@@ -1302,11 +1264,11 @@ const initPauseButton = () => {
         console.log(`Slideshow ${STATE.slideshow.isPaused ? 'Paused' : 'Resumed'}`);
         const currentActiveSlide = container.querySelector('.slide.active');
         if (STATE.slideshow.isPaused) {
-            STATE.slideshow.slideInterval?.pause(); // Use timer's pause
+            STATE.slideshow.slideInterval?.pause();
             pauseButton.innerHTML = '<i class="material-icons">play_arrow</i>'; pauseButton.title = "Resume Slideshow";
             currentActiveSlide?.classList.add('slideshow-paused');
         } else {
-            STATE.slideshow.slideInterval?.start(); // Use timer's start/resume
+            STATE.slideshow.slideInterval?.start();
             pauseButton.innerHTML = '<i class="material-icons">pause</i>'; pauseButton.title = "Pause Slideshow";
             currentActiveSlide?.classList.remove('slideshow-paused');
         }
@@ -1325,16 +1287,16 @@ const slidesInit = async () => {
     if (typeof DOMPurify === 'undefined') console.warn("DOMPurify not loaded.");
 
     try {
-        SlideUtils.getOrCreateSlidesContainer(); // Ensure container exists
-        initArrowNavigation(); // Add arrows
-        initPauseButton(); // Add pause button (custom)
+        SlideUtils.getOrCreateSlidesContainer();
+        initArrowNavigation();
+        initPauseButton();
 
-        await SlideshowManager.loadSlideshowData(); // Load data, create dots, start timer (via VisibilityObserver)
+        await SlideshowManager.loadSlideshowData();
 
         SlideshowManager.initTouchEvents();
-        SlideshowManager.initKeyboardEvents(); // Includes spacebar pause
+        SlideshowManager.initKeyboardEvents();
 
-        VisibilityObserver.init(); // Handles visibility and timer start/pause
+        VisibilityObserver.init();
 
         console.log("✅ Slideshow initialized successfully.");
     } catch (error) {
@@ -1343,7 +1305,6 @@ const slidesInit = async () => {
     }
 };
 
-// Global export
 window.slideshowPure = {
     CONFIG, STATE, SlideUtils, ApiUtils, SlideCreator, SlideshowManager, VisibilityObserver,
     initSlideshowData: () => SlideshowManager.loadSlideshowData(),
@@ -1351,6 +1312,5 @@ window.slideshowPure = {
     prevSlide: () => SlideshowManager.prevSlide(),
 };
 
-// Initialization Logic
 initLoadingScreen();
 startLoginStatusWatcher(); // Handles triggering init after login
